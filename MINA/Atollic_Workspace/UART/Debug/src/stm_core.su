@@ -1,0 +1,10 @@
+stm_core.c:13:6:Nucleo_SetPinAFGPIO	24	static
+stm_core.c:20:6:Nucleo_SetPinGPIO	32	static
+stm_core.c:128:6:GPIOToggle	16	static
+stm_core.c:133:6:GPIORead	16	static
+stm_core.c:138:6:GPIOWrite	24	static
+stm_core.c:147:5:Usart2Send	16	static
+stm_core.c:156:6:Usart2String	16	static
+stm_core.c:165:5:Usart2SendStr	24	static
+stm_core.c:174:5:Usart2Recv	4	static
+stm_core.c:181:6:IsUsart2Recv	4	static

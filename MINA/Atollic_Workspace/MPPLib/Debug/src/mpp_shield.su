@@ -1,0 +1,2 @@
+mpp_shield.c:10:6:Init8LED	4	static
+mpp_shield.c:31:6:Write8LED	16	static

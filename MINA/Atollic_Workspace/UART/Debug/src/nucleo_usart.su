@@ -1,0 +1,6 @@
+nucleo_usart.c:11:6:Usart2Init	16	static
+nucleo_usart.c:37:5:Usart2Send	16	static
+nucleo_usart.c:46:6:Usart2String	16	static
+nucleo_usart.c:55:5:Usart2SendStr	24	static
+nucleo_usart.c:64:5:Usart2Recv	4	static
+nucleo_usart.c:71:6:IsUsart2Recv	4	static

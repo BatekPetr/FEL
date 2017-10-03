@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+  <meta http-equiv="Content-Language" content="en-us" />
+  <meta name="generator" content="SynEdit XHTML Exporter, http://synedit.sf.net/" />
+  <title>Untitled</title>
+  <style type="text/css">
+    /*<![CDATA[*/
+    body {background-color : #000040;}
+    code {font-family: Fixedsys, Lucida Console, courier; font-size: 12px;
+        font-weight: normal; color : #FFFFFF; background-color : #000040;}
+    
+     .assembler {
+      background-color : #000040;
+      color : #FFFF80;
+      font-style : italic;
+     }
+     .comment {
+      background-color : #000040;
+      color : #C0C0C0;
+     }
+     .float {
+      background-color : #000040;
+      color : #80FFFF;
+     }
+     .hexadecimal {
+      background-color : #000040;
+      color : #00FFFF;
+     }
+     .character {
+      background-color : #000040;
+      color : #00FFFF;
+     }
+     .identifier {
+      background-color : #000040;
+      color : #FFFF00;
+     }
+     .illegalchar {
+      background-color : #000040;
+      color : #FF0000;
+     }
+     .number {
+      background-color : #000040;
+      color : #00FFFF;
+     }
+     .octal {
+      background-color : #000040;
+      color : #0000FF;
+     }
+     .preprocessor {
+      background-color : #000040;
+      color : #00FF80;
+     }
+     .reservedword {
+      background-color : #000040;
+      color : #FFFFFF;
+     }
+     .space {
+      background-color : #000040;
+      color : #008080;
+     }
+     .string {
+      background-color : #000040;
+      color : #00FFFF;
+     }
+     .symbol {
+      background-color : #000040;
+      color : #FFFFFF;
+     }
+    /*]]>*/
+  </style>
+</head>
+<body>
+<pre>
+<code><span class="preprocessor">#ifndef __ANSI_H
+#define __ANSI_H
+
+#define ERASE_SCREEN	&quot;\033[2J&quot;
+
+#define ERASE_LINE		&quot;\033[K&quot;
+
+#define MODE_B_W		&quot;\033[0;30;47m&quot;
+#define MODE_W_B		&quot;\033[0;37;40m&quot;
+#define MODE_R_B		&quot;\033[0;31;40m&quot;
+#define MODE_R_W		&quot;\033[0;31;47m&quot;
+#define MODE_G_W		&quot;\033[0;32;47m&quot;
+#define MODE_L_W		&quot;\033[0;33;47m&quot;
+
+</span><span class="reservedword">int </span><span class="identifier">AnsiSetGrMode</span><span class="symbol">(char </span><span class="identifier">cTextAttr</span><span class="symbol">, char </span><span class="identifier">cFore</span><span class="symbol">, char </span><span class="identifier">cBack</span><span class="symbol">);
+
+</span><span class="preprocessor">#define CUR_UP			&quot;\033[1A&quot;
+#define CUR_DOWN		&quot;\033[1B&quot;
+#define CUR_RIGHT		&quot;\033[1C&quot;
+#define CUR_LEFT		&quot;\033[1D&quot;
+
+</span><span class="reservedword">int </span><span class="identifier">AnsiCurUp</span><span class="symbol">(char </span><span class="identifier">cNum</span><span class="symbol">);
+int </span><span class="identifier">AnsiCurDown</span><span class="symbol">(char </span><span class="identifier">cNum</span><span class="symbol">);
+int </span><span class="identifier">AnsiCurRight</span><span class="symbol">(char </span><span class="identifier">cNum</span><span class="symbol">);
+int </span><span class="identifier">AnsiCurLeft</span><span class="symbol">(char </span><span class="identifier">cNum</span><span class="symbol">);
+
+</span><span class="preprocessor">#define DIR_UP			0
+#define DIR_DOWN		1
+#define DIR_RIGHT		2
+#define DIR_LEFT		3
+
+</span><span class="reservedword">int </span><span class="identifier">AnsiCurMove</span><span class="symbol">(char </span><span class="identifier">cDir</span><span class="symbol">, char </span><span class="identifier">cNum</span><span class="symbol">);
+
+int </span><span class="identifier">AnsiCurPos</span><span class="symbol">(char </span><span class="identifier">cColumn</span><span class="symbol">, char </span><span class="identifier">cLine</span><span class="symbol">);
+
+</span><span class="preprocessor">#define SAVE_CUR_POS	&quot;\033[s&quot;
+#define REST_CUR_POS	&quot;\033[u&quot;
+
+</span><span class="reservedword">int </span><span class="identifier">AnsiSetMode</span><span class="symbol">(char </span><span class="identifier">cMode</span><span class="symbol">);
+int </span><span class="identifier">AnsiResetMode</span><span class="symbol">(char </span><span class="identifier">cMode</span><span class="symbol">);
+
+</span><span class="preprocessor">#define COL_BLACK	0
+#define COL_RED		1
+#define COL_GREEN	2
+#define COL_YELLOW	3
+#define COL_BLUE	4
+#define COL_MAGENTA	5
+#define COL_CYAN	6
+#define COL_WHITE	7
+
+</span><span class="comment">// int AnsiSetKbString(???);	// not implemnted yet !!
+
+</span><span class="reservedword">int </span><span class="identifier">AnsiPuts</span><span class="symbol">(char *</span><span class="identifier">cPtr</span><span class="symbol">);
+
+</span><span class="preprocessor">#endif	</span><span class="comment">// __ANSI_H
+</span></code></pre>
+</body>
+</html>

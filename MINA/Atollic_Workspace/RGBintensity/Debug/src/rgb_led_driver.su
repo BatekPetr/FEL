@@ -1,0 +1,2 @@
+rgb_led_driver.c:10:6:initRGB_LED_PWM	24	static
+rgb_led_driver.c:74:6:set_RGB_LED_PWM	24	static

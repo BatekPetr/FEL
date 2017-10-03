@@ -1,0 +1,4 @@
+core_cm4.h:1698:22:NVIC_SetPriority	16	static
+core_cm4.h:1830:26:SysTick_Config	16	static
+main.c:43:6:SysTick_Handler	4	static
+main.c:56:5:main	128	static

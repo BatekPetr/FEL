@@ -1,0 +1,4 @@
+stm_core.c:11:6:Nucleo_SetPinGPIO	32	static
+stm_core.c:119:6:GPIOToggle	16	static
+stm_core.c:124:6:GPIORead	16	static
+stm_core.c:129:6:GPIOWrite	24	static

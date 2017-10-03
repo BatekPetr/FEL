@@ -1,0 +1,36 @@
+[_setup_]
+port=COM1   
+baudrate=19200
+
+width=1024
+height=480
+background_color = white
+
+grid_h_origin = 128
+grid_h_step = 10
+grid_h_color = #EEE
+grid_h_origin_color = #CCC
+
+grid_v_origin = 0
+grid_v_step = 10
+grid_v_color = #EEE
+grid_v_origin_color = transparent
+
+[_default_]
+min=0
+max=255
+
+[Field1]
+color=gray
+min=0
+max=255
+
+[Field2]
+color=blue
+min=0
+max=255
+
+[Field3]
+color=red
+min=0
+max=255

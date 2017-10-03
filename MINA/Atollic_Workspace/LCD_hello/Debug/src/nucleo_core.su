@@ -1,0 +1,5 @@
+nucleo_core.c:13:6:Nucleo_SetPinAFGPIO	24	static
+nucleo_core.c:20:6:Nucleo_SetPinGPIO	32	static
+nucleo_core.c:128:6:GPIOToggle	16	static
+nucleo_core.c:133:6:GPIORead	16	static
+nucleo_core.c:138:6:GPIOWrite	24	static

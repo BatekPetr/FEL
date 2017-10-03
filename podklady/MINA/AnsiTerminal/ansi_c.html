@@ -1,0 +1,262 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+  <meta http-equiv="Content-Language" content="en-us" />
+  <meta name="generator" content="SynEdit XHTML Exporter, http://synedit.sf.net/" />
+  <title>Untitled</title>
+  <style type="text/css">
+    /*<![CDATA[*/
+    body {background-color : #000040;}
+    code {font-family: Fixedsys, Lucida Console, courier; font-size: 12px;
+        font-weight: normal; color : #FFFFFF; background-color : #000040;}
+    
+     .assembler {
+      background-color : #000040;
+      color : #FFFF80;
+      font-style : italic;
+     }
+     .comment {
+      background-color : #000040;
+      color : #C0C0C0;
+     }
+     .float {
+      background-color : #000040;
+      color : #80FFFF;
+     }
+     .hexadecimal {
+      background-color : #000040;
+      color : #00FFFF;
+     }
+     .character {
+      background-color : #000040;
+      color : #00FFFF;
+     }
+     .identifier {
+      background-color : #000040;
+      color : #FFFF00;
+     }
+     .illegalchar {
+      background-color : #000040;
+      color : #FF0000;
+     }
+     .number {
+      background-color : #000040;
+      color : #00FFFF;
+     }
+     .octal {
+      background-color : #000040;
+      color : #0000FF;
+     }
+     .preprocessor {
+      background-color : #000040;
+      color : #00FF80;
+     }
+     .reservedword {
+      background-color : #000040;
+      color : #FFFFFF;
+     }
+     .space {
+      background-color : #000040;
+      color : #008080;
+     }
+     .string {
+      background-color : #000040;
+      color : #00FFFF;
+     }
+     .symbol {
+      background-color : #000040;
+      color : #FFFFFF;
+     }
+    /*]]>*/
+  </style>
+</head>
+<body>
+<pre>
+<code><span class="preprocessor">#include &lt;stdio.h&gt;
+
+#include &quot;ansi.h&quot;
+
+</span><span class="reservedword">int </span><span class="identifier">AnsiSendValue</span><span class="symbol">(char </span><span class="identifier">cValue</span><span class="symbol">)
+{
+</span><span class="space">	</span><span class="reservedword">if (</span><span class="identifier">cValue</span><span class="symbol">==</span><span class="number">0</span><span class="symbol">)
+</span><span class="space">	</span><span class="symbol">{
+</span><span class="space">		</span><span class="identifier">putchar</span><span class="symbol">(</span><span class="character">'0'</span><span class="symbol">);
+</span><span class="space">		</span><span class="reservedword">return </span><span class="number">1</span><span class="symbol">;
+</span><span class="space">	</span><span class="symbol">}
+
+</span><span class="space">	</span><span class="reservedword">if (</span><span class="identifier">cValue</span><span class="symbol">&gt;=</span><span class="number">100</span><span class="symbol">)</span><span class="space">			</span><span class="comment">// nejvyssi rad ?
+</span><span class="space">	</span><span class="symbol">{
+</span><span class="space">		</span><span class="identifier">putchar</span><span class="symbol">(</span><span class="identifier">cValue</span><span class="symbol">/</span><span class="number">100 </span><span class="symbol">+ </span><span class="character">'0'</span><span class="symbol">);
+</span><span class="space">		</span><span class="identifier">cValue</span><span class="symbol">%=</span><span class="number">100</span><span class="symbol">;</span><span class="space">			</span><span class="comment">// a zahod ho
+
+</span><span class="space">		</span><span class="identifier">putchar</span><span class="symbol">(</span><span class="identifier">cValue</span><span class="symbol">/</span><span class="number">10 </span><span class="symbol">+ </span><span class="character">'0'</span><span class="symbol">);</span><span class="space">	</span><span class="comment">// desitky
+
+</span><span class="space">	</span><span class="symbol">}
+</span><span class="space">	</span><span class="reservedword">else
+</span><span class="space">	</span><span class="symbol">{
+</span><span class="space">		</span><span class="reservedword">if (</span><span class="identifier">cValue</span><span class="symbol">&gt;=</span><span class="number">10</span><span class="symbol">)
+</span><span class="space">			</span><span class="identifier">putchar</span><span class="symbol">(</span><span class="identifier">cValue</span><span class="symbol">/</span><span class="number">10 </span><span class="symbol">+ </span><span class="character">'0'</span><span class="symbol">);</span><span class="space">	</span><span class="comment">// desitky
+</span><span class="space">	</span><span class="symbol">}
+
+</span><span class="space">	</span><span class="identifier">cValue</span><span class="symbol">%=</span><span class="number">10</span><span class="symbol">;</span><span class="space">					</span><span class="comment">// a jednotky
+</span><span class="space">	</span><span class="identifier">putchar</span><span class="symbol">(</span><span class="identifier">cValue </span><span class="symbol">+ </span><span class="character">'0'</span><span class="symbol">);
+
+</span><span class="space">	</span><span class="reservedword">return </span><span class="number">1</span><span class="symbol">;</span><span class="space">					</span><span class="comment">// provedeno OK
+</span><span class="symbol">}
+
+int </span><span class="identifier">AnsiSetGrMode</span><span class="symbol">(char </span><span class="identifier">cTextAttr</span><span class="symbol">, char </span><span class="identifier">cFore</span><span class="symbol">, char </span><span class="identifier">cBack</span><span class="symbol">)
+{
+</span><span class="space">	</span><span class="reservedword">if ((</span><span class="identifier">cTextAttr</span><span class="symbol">==</span><span class="number">2</span><span class="symbol">)||(</span><span class="identifier">cTextAttr</span><span class="symbol">==</span><span class="number">3</span><span class="symbol">)||(</span><span class="identifier">cTextAttr</span><span class="symbol">&gt;</span><span class="number">8</span><span class="symbol">))
+</span><span class="space">		</span><span class="reservedword">return </span><span class="number">0</span><span class="symbol">;</span><span class="space">				</span><span class="comment">// zakazane hodnoty = false
+
+</span><span class="space">	</span><span class="reservedword">if (</span><span class="identifier">cFore</span><span class="symbol">&lt;</span><span class="number">30</span><span class="symbol">)</span><span class="space">				</span><span class="comment">// mozno zadat jako 0-7
+</span><span class="space">		</span><span class="identifier">cFore</span><span class="symbol">+=</span><span class="number">30</span><span class="symbol">;
+
+</span><span class="space">	</span><span class="reservedword">if ((</span><span class="identifier">cFore</span><span class="symbol">&lt;</span><span class="number">30</span><span class="symbol">)||(</span><span class="identifier">cFore</span><span class="symbol">&gt;</span><span class="number">37</span><span class="symbol">))
+</span><span class="space">		</span><span class="reservedword">return </span><span class="number">0</span><span class="symbol">;</span><span class="space">				</span><span class="comment">// zakazane hodnoty = false
+
+</span><span class="space">	</span><span class="reservedword">if (</span><span class="identifier">cBack</span><span class="symbol">&lt;</span><span class="number">40</span><span class="symbol">)</span><span class="space">				</span><span class="comment">// mozno zadat jako 0-7
+</span><span class="space">		</span><span class="identifier">cBack</span><span class="symbol">+=</span><span class="number">40</span><span class="symbol">;
+
+</span><span class="space">	</span><span class="reservedword">if ((</span><span class="identifier">cBack</span><span class="symbol">&lt;</span><span class="number">40</span><span class="symbol">)||(</span><span class="identifier">cBack</span><span class="symbol">&gt;</span><span class="number">47</span><span class="symbol">))
+</span><span class="space">		</span><span class="reservedword">return </span><span class="number">0</span><span class="symbol">;</span><span class="space">				</span><span class="comment">// zakazane hodnoty = false
+
+</span><span class="space">	</span><span class="identifier">putchar</span><span class="symbol">(</span><span class="character">'\033'</span><span class="symbol">);
+</span><span class="space">	</span><span class="identifier">putchar</span><span class="symbol">(</span><span class="character">'['</span><span class="symbol">);
+
+</span><span class="space">	</span><span class="identifier">AnsiSendValue</span><span class="symbol">(</span><span class="identifier">cTextAttr</span><span class="symbol">);
+</span><span class="space">	</span><span class="identifier">putchar</span><span class="symbol">(</span><span class="character">';'</span><span class="symbol">);
+
+</span><span class="space">	</span><span class="identifier">AnsiSendValue</span><span class="symbol">(</span><span class="identifier">cFore</span><span class="symbol">);
+</span><span class="space">	</span><span class="identifier">putchar</span><span class="symbol">(</span><span class="character">';'</span><span class="symbol">);
+
+</span><span class="space">	</span><span class="identifier">AnsiSendValue</span><span class="symbol">(</span><span class="identifier">cBack</span><span class="symbol">);
+</span><span class="space">	</span><span class="identifier">putchar</span><span class="symbol">(</span><span class="character">'m'</span><span class="symbol">);
+</span><span class="space">	</span><span class="reservedword">return </span><span class="number">1</span><span class="symbol">;
+}
+
+int </span><span class="identifier">AnsiCurMove</span><span class="symbol">(char </span><span class="identifier">cDir</span><span class="symbol">, char </span><span class="identifier">cNum</span><span class="symbol">)
+{
+</span><span class="space">	</span><span class="reservedword">switch(</span><span class="identifier">cDir</span><span class="symbol">)
+</span><span class="space">	</span><span class="symbol">{
+</span><span class="space">		</span><span class="reservedword">case</span><span class="space">	</span><span class="identifier">DIR_UP</span><span class="symbol">:
+</span><span class="space">			</span><span class="reservedword">return </span><span class="identifier">AnsiCurUp</span><span class="symbol">(</span><span class="identifier">cNum</span><span class="symbol">);
+</span><span class="space">		</span><span class="reservedword">case</span><span class="space">	</span><span class="identifier">DIR_DOWN</span><span class="symbol">:
+</span><span class="space">			</span><span class="reservedword">return </span><span class="identifier">AnsiCurDown</span><span class="symbol">(</span><span class="identifier">cNum</span><span class="symbol">);
+</span><span class="space">		</span><span class="reservedword">case</span><span class="space">	</span><span class="identifier">DIR_RIGHT</span><span class="symbol">:
+</span><span class="space">			</span><span class="reservedword">return </span><span class="identifier">AnsiCurRight</span><span class="symbol">(</span><span class="identifier">cNum</span><span class="symbol">);
+</span><span class="space">		</span><span class="reservedword">case</span><span class="space">	</span><span class="identifier">DIR_LEFT</span><span class="symbol">:
+</span><span class="space">			</span><span class="reservedword">return </span><span class="identifier">AnsiCurLeft</span><span class="symbol">(</span><span class="identifier">cNum</span><span class="symbol">);
+</span><span class="space">		</span><span class="reservedword">default:
+</span><span class="space">			</span><span class="reservedword">return </span><span class="number">0</span><span class="symbol">;</span><span class="space">				</span><span class="comment">// false. spatna hodnota
+</span><span class="space">	</span><span class="symbol">}
+}
+
+int </span><span class="identifier">AnsiCurUp</span><span class="symbol">(char </span><span class="identifier">cNum</span><span class="symbol">)
+{
+</span><span class="space">	</span><span class="identifier">putchar</span><span class="symbol">(</span><span class="character">'\033'</span><span class="symbol">);
+</span><span class="space">	</span><span class="identifier">putchar</span><span class="symbol">(</span><span class="character">'['</span><span class="symbol">);
+
+</span><span class="space">	</span><span class="identifier">AnsiSendValue</span><span class="symbol">(</span><span class="identifier">cNum</span><span class="symbol">);
+
+</span><span class="space">	</span><span class="identifier">putchar</span><span class="symbol">(</span><span class="character">'A'</span><span class="symbol">);
+</span><span class="space">	</span><span class="reservedword">return </span><span class="number">1</span><span class="symbol">;
+}
+
+int </span><span class="identifier">AnsiCurDown</span><span class="symbol">(char </span><span class="identifier">cNum</span><span class="symbol">)
+{
+</span><span class="space">	</span><span class="identifier">putchar</span><span class="symbol">(</span><span class="character">'\033'</span><span class="symbol">);
+</span><span class="space">	</span><span class="identifier">putchar</span><span class="symbol">(</span><span class="character">'['</span><span class="symbol">);
+
+</span><span class="space">	</span><span class="identifier">AnsiSendValue</span><span class="symbol">(</span><span class="identifier">cNum</span><span class="symbol">);
+
+</span><span class="space">	</span><span class="identifier">putchar</span><span class="symbol">(</span><span class="character">'B'</span><span class="symbol">);
+</span><span class="space">	</span><span class="reservedword">return </span><span class="number">1</span><span class="symbol">;
+}
+
+int </span><span class="identifier">AnsiCurRight</span><span class="symbol">(char </span><span class="identifier">cNum</span><span class="symbol">)
+{
+</span><span class="space">	</span><span class="identifier">putchar</span><span class="symbol">(</span><span class="character">'\033'</span><span class="symbol">);
+</span><span class="space">	</span><span class="identifier">putchar</span><span class="symbol">(</span><span class="character">'['</span><span class="symbol">);
+
+</span><span class="space">	</span><span class="identifier">AnsiSendValue</span><span class="symbol">(</span><span class="identifier">cNum</span><span class="symbol">);
+
+</span><span class="space">	</span><span class="identifier">putchar</span><span class="symbol">(</span><span class="character">'C'</span><span class="symbol">);
+</span><span class="space">	</span><span class="reservedword">return </span><span class="number">1</span><span class="symbol">;
+}
+
+int </span><span class="identifier">AnsiCurLeft</span><span class="symbol">(char </span><span class="identifier">cNum</span><span class="symbol">)
+{
+</span><span class="space">	</span><span class="identifier">putchar</span><span class="symbol">(</span><span class="character">'\033'</span><span class="symbol">);
+</span><span class="space">	</span><span class="identifier">putchar</span><span class="symbol">(</span><span class="character">'['</span><span class="symbol">);
+
+</span><span class="space">	</span><span class="identifier">AnsiSendValue</span><span class="symbol">(</span><span class="identifier">cNum</span><span class="symbol">);
+
+</span><span class="space">	</span><span class="identifier">putchar</span><span class="symbol">(</span><span class="character">'D'</span><span class="symbol">);
+</span><span class="space">	</span><span class="reservedword">return </span><span class="number">1</span><span class="symbol">;
+}
+
+
+int </span><span class="identifier">AnsiCurPos</span><span class="symbol">(char </span><span class="identifier">cColumn</span><span class="symbol">, char </span><span class="identifier">cLine</span><span class="symbol">)
+{
+</span><span class="space">	</span><span class="reservedword">if ((</span><span class="identifier">cLine</span><span class="symbol">&gt;</span><span class="number">50</span><span class="symbol">)||(</span><span class="identifier">cLine</span><span class="symbol">&lt;</span><span class="number">0</span><span class="symbol">))
+</span><span class="space">		</span><span class="reservedword">return </span><span class="number">0</span><span class="symbol">;
+
+</span><span class="space">	</span><span class="reservedword">if ((</span><span class="identifier">cColumn</span><span class="symbol">&gt;</span><span class="number">80</span><span class="symbol">)||(</span><span class="identifier">cColumn</span><span class="symbol">&lt;</span><span class="number">0</span><span class="symbol">))
+</span><span class="space">		</span><span class="reservedword">return </span><span class="number">0</span><span class="symbol">;
+
+</span><span class="space">	</span><span class="identifier">putchar</span><span class="symbol">(</span><span class="character">'\033'</span><span class="symbol">);
+</span><span class="space">	</span><span class="identifier">putchar</span><span class="symbol">(</span><span class="character">'['</span><span class="symbol">);
+
+</span><span class="space">	</span><span class="identifier">AnsiSendValue</span><span class="symbol">(</span><span class="identifier">cLine</span><span class="symbol">);
+</span><span class="space">	</span><span class="identifier">putchar</span><span class="symbol">(</span><span class="character">';'</span><span class="symbol">);
+
+</span><span class="space">	</span><span class="identifier">AnsiSendValue</span><span class="symbol">(</span><span class="identifier">cColumn</span><span class="symbol">);
+
+</span><span class="space">	</span><span class="identifier">putchar</span><span class="symbol">(</span><span class="character">'H'</span><span class="symbol">);
+</span><span class="space">	</span><span class="reservedword">return </span><span class="number">1</span><span class="symbol">;
+}
+
+
+int </span><span class="identifier">AnsiSetMode</span><span class="symbol">(char </span><span class="identifier">cMode</span><span class="symbol">)
+{
+</span><span class="space">	</span><span class="reservedword">if ((</span><span class="identifier">cMode</span><span class="symbol">&gt;</span><span class="number">19</span><span class="symbol">)||(</span><span class="identifier">cMode</span><span class="symbol">&lt;</span><span class="number">0</span><span class="symbol">))
+</span><span class="space">		</span><span class="reservedword">return </span><span class="number">0</span><span class="symbol">;
+
+</span><span class="space">	</span><span class="identifier">putchar</span><span class="symbol">(</span><span class="character">'\033'</span><span class="symbol">);
+</span><span class="space">	</span><span class="identifier">putchar</span><span class="symbol">(</span><span class="character">'['</span><span class="symbol">);
+</span><span class="space">	</span><span class="identifier">putchar</span><span class="symbol">(</span><span class="character">'='</span><span class="symbol">);
+
+</span><span class="space">	</span><span class="identifier">AnsiSendValue</span><span class="symbol">(</span><span class="identifier">cMode</span><span class="symbol">);
+
+</span><span class="space">	</span><span class="identifier">putchar</span><span class="symbol">(</span><span class="character">'h'</span><span class="symbol">);
+</span><span class="space">	</span><span class="reservedword">return </span><span class="number">1</span><span class="symbol">;
+}
+
+int </span><span class="identifier">AnsiResetMode</span><span class="symbol">(char </span><span class="identifier">cMode</span><span class="symbol">)
+{
+</span><span class="space">	</span><span class="reservedword">if ((</span><span class="identifier">cMode</span><span class="symbol">&gt;</span><span class="number">19</span><span class="symbol">)||(</span><span class="identifier">cMode</span><span class="symbol">&lt;</span><span class="number">0</span><span class="symbol">))
+</span><span class="space">		</span><span class="reservedword">return </span><span class="number">0</span><span class="symbol">;
+
+</span><span class="space">	</span><span class="identifier">putchar</span><span class="symbol">(</span><span class="character">'\033'</span><span class="symbol">);
+</span><span class="space">	</span><span class="identifier">putchar</span><span class="symbol">(</span><span class="character">'['</span><span class="symbol">);
+</span><span class="space">	</span><span class="identifier">putchar</span><span class="symbol">(</span><span class="character">'='</span><span class="symbol">);
+
+</span><span class="space">	</span><span class="identifier">AnsiSendValue</span><span class="symbol">(</span><span class="identifier">cMode</span><span class="symbol">);
+
+</span><span class="space">	</span><span class="identifier">putchar</span><span class="symbol">(</span><span class="character">'l'</span><span class="symbol">);</span><span class="space">				</span><span class="comment">// male L !!!
+</span><span class="space">	</span><span class="reservedword">return </span><span class="number">1</span><span class="symbol">;
+}
+
+int </span><span class="identifier">AnsiPuts</span><span class="symbol">(char *</span><span class="identifier">cPtr</span><span class="symbol">)
+{
+</span><span class="space">	</span><span class="reservedword">for (;*</span><span class="identifier">cPtr</span><span class="symbol">;</span><span class="identifier">cPtr</span><span class="symbol">++)
+</span><span class="space">		</span><span class="identifier">putchar</span><span class="symbol">(*</span><span class="identifier">cPtr</span><span class="symbol">);
+
+</span><span class="space">	</span><span class="reservedword">return </span><span class="number">1</span><span class="symbol">;
+}
+</span></code></pre>
+</body>
+</html>

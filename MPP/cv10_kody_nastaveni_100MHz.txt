@@ -1,0 +1,235 @@
+*********** STM_CORE.H *************************
+
+typedef enum { 
+  busClockAHB,
+  busClockAPB1, 
+  busClockAPB2,
+  timersClockAPB1, 
+  timersClockAPB2 
+} eBusClocks;
+
+uint32_t GetBusClock(eBusClocks clk);
+
+typedef enum { 
+  clockSourceHSI, 
+  clockSourceHSE 
+} eClockSources;
+
+bool SetClock100MHz(eClockSources clkSrc);
+bool SetClockHSI(void);
+
+*********** STM_CORE.C *************************
+
+uint32_t GetTimerClock(int timerNum)
+{
+  uint32_t timerClock = 0;
+
+#if defined(STM32F411xE)  // | defined ...
+  switch(timerNum)
+  {
+    case 1:               // timers on APB2
+    case 9:
+    case 10:
+    case 11:
+      timerClock = GetBusClock(timersClockAPB2);
+      break;
+    case 2:              // timers on APB1
+    case 3:
+    case 4:
+    case 5:
+      timerClock = GetBusClock(timersClockAPB1);
+      break;
+  }
+#endif
+
+  return timerClock;
+}
+
+uint32_t GetBusClock(eBusClocks clk)
+{
+  uint32_t bitval = 0;
+  uint32_t divider = 1;
+
+#if defined(STM32F411xE)  // | defined ...
+  switch(clk)
+  {
+    case busClockAHB:
+      bitval = (RCC->CFGR & (0x0f << 4)) >> 4;   // HPRE [7:4] to lower 4 bits
+      if (bitval & 0x8)           // 1xxx
+        divider = 1 << ((bitval & 0x07) + 1);   // 0 = /2, 1 = /4
+      else
+        divider = 1;              // 0xxx = not divided
+      break;
+    case busClockAPB1:
+    case timersClockAPB1:         // x2
+      bitval = (RCC->CFGR & (0x07 << 10)) >> 10; // PPRE1 [12:10] to lower 3 bits
+      if (bitval & 0x4)           // 1xx
+        divider = 1 << ((bitval & 0x03) + 1);   // 0 = /2, 1 = /4
+      else
+        divider = 1;              // 0xx = not divided
+
+      break;
+    case busClockAPB2:
+    case timersClockAPB2:         // the same
+      bitval = (RCC->CFGR >> 13) & 0x07; // PPRE2 [15:13] to lower 3 bits
+      if (bitval & 0x4)           // 1xx
+        divider = 1 << ((bitval & 0x03) + 1);   // 0 = /2, 1 = /4
+      else
+        divider = 1;              // 0xx = not divided
+      break;
+    default:
+      return 0;
+  }
+
+  SystemCoreClockUpdate();      // pro jistotu si nastav SystemCoreClock
+
+  if (((clk == timersClockAPB1) || (clk == timersClockAPB1)) && (divider > 1))
+    return SystemCoreClock / divider * 2;
+  else
+    return SystemCoreClock / divider;
+#else
+#error Valid controller not set
+#endif
+}
+
+bool SetClock100MHz(eClockSources clkSrc)
+{
+  uint32_t t;
+
+#if defined(STM32F411xE)  // || dalsi modely se stejnym CR/CFGR
+#else
+#error Unsupported processor
+#endif
+
+#if HSE_VALUE != 8000000
+#error HSE_VALUE must be set to 8M = ext. clock from ST/Link on Nucleo
+#endif
+
+  if (clkSrc == clockSourceHSE)
+  {
+    if (!(RCC->CR & RCC_CR_HSEON))      // HSE not running ?
+    {
+      RCC->CR |= RCC_CR_HSEON;          // enable
+
+      t = 200;
+      while(!(RCC->CR & RCC_CR_HSEON) && t)   // wait to ON
+        t--;
+      if (!t)
+        return false;
+    }
+  }
+
+  if (!(RCC->CR & RCC_CR_HSION))      // HSI not running ?
+  {
+    RCC->CR |= RCC_CR_HSION;          // enable
+
+    t = 100;
+    while(!(RCC->CR & RCC_CR_HSION) && t)   // wait to ON
+      t--;
+    if (!t)
+      return false;
+  }
+
+  if (RCC->CR & RCC_CR_PLLON)         // bezi ?
+  {
+    RCC->CR &= ~RCC_CR_PLLON;         // stop it
+  }
+
+  RCC->CFGR &= ~(RCC_CFGR_SW);  // SW = 00 - HSI as source
+
+  RCC->CFGR = 0;       // RESET state, all off
+
+  RCC->CFGR |= 0
+      | 0 << 13        // PPRE2 [15:13] = 0xx = not divided
+      | 4 << 10        // PPRE1 [12:10] = 100 = /2 (max. 50MHz)
+      | 0 << 4         // HPRE  [7:4] = 0xxx = not divided
+      ;
+
+  if (clkSrc == clockSourceHSI)
+  {
+    RCC->PLLCFGR &= ~(1 << 22);   // PLLSRC [22] = 0 = HSI as source
+
+    RCC->PLLCFGR &= ~RCC_PLLCFGR_PLLM;
+    RCC->PLLCFGR |= 8 << 0;       // PLLM [5:0] = odpovida deleni
+    RCC->PLLCFGR &= ~RCC_PLLCFGR_PLLN;
+    RCC->PLLCFGR |= 100 << 6;     // PLLN [14:6] = odpovida deleni
+    RCC->PLLCFGR &= ~RCC_PLLCFGR_PLLP;
+    RCC->PLLCFGR |= 0 << 16;      // PLLP [17:16] = 00 = /2
+  }
+
+  if (clkSrc == clockSourceHSE)
+  {
+    RCC->PLLCFGR &= ~(1 << 22);   // PLLSRC [22] = 0 = HSI as source
+    RCC->PLLCFGR |= RCC_PLLCFGR_PLLSRC_HSE;
+
+    RCC->PLLCFGR &= ~RCC_PLLCFGR_PLLM;
+    RCC->PLLCFGR |= 4 << 0;       // PLLM [5:0] = odpovida deleni
+    RCC->PLLCFGR &= ~RCC_PLLCFGR_PLLN;
+    RCC->PLLCFGR |= 100 << 6;     // PLLN [14:6] = odpovida deleni
+    RCC->PLLCFGR &= ~RCC_PLLCFGR_PLLP;
+    RCC->PLLCFGR |= 0 << 16;      // PLLP [17:16] = 00 = /2
+  }
+
+  RCC->CR |= RCC_CR_PLLON;          // enable
+
+  t = 100;
+  while(!(RCC->CR & RCC_CR_PLLON) && t)   // wait to ON
+    t--;
+  if (!t)
+    return false;
+
+  // RM - 3.4 Read interface
+  FLASH->ACR &= ~(0x0f << 0);     // LATENCY [3:0] = 0000
+  FLASH->ACR |= (3 << 0);         // 3 WS
+
+  PWR->CR |= PWR_CR_VOS_0 | PWR_CR_VOS_1;   // scale mode 1 - req. for 100MHz
+
+  RCC->CFGR |= RCC_CFGR_SW_PLL;
+  t = 100;
+  while(!((RCC->CFGR & 0x0c) == RCC_CFGR_SWS_PLL) && t)   // wait to verify SWS
+    t--;
+  if (!t)
+    return false;
+
+  return true;
+}
+
+bool SetClockHSI(void)
+{
+  uint32_t t;
+
+  if (!(RCC->CR & RCC_CR_HSION))      // HSI not running ?
+  {
+    RCC->CR |= RCC_CR_HSION;          // enable
+
+    t = 100;
+    while(!(RCC->CR & RCC_CR_HSION) && t)   // wait to ON
+      t--;
+    if (!t)
+      return false;
+  }
+
+  RCC->CFGR &= ~RCC_CFGR_SW;         // clear SW bits
+  t = 100;
+  while(!((RCC->CFGR & 0x0c) == RCC_CFGR_SWS_HSI) && t)   // wait to verify SWS
+    t--;
+  if (!t)
+    return false;
+
+  return true;
+}
+
+*********** NUCLEO_USART.C *********************
+!! jen modifikace nastaveni BRR:
+{
+  uint sampling = (USART2->CR1 & USART_CR1_OVER8) ? 8 : 16;
+  uint32_t apb1, mant, tmp, frac;
+  apb1 = GetBusClock(busClockAPB1);
+
+  mant = apb1 * 16 / (sampling * baudRate);  // v 16-tinach
+  tmp = mant / 16;
+
+  frac = mant - (tmp * 16);        // zbytek po deleni 16
+  USART2->BRR = (tmp << 4) | (frac & 0x0f);
+}
+
