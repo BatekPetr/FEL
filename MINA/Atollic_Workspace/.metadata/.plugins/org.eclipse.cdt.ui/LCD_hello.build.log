@@ -1,0 +1,39 @@
+17:39:47 **** Incremental Build of configuration Debug for project LCD_hello ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ../src/nucleo_usart.c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -DSTM32F411xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src/nucleo_usart.o 
+../src/nucleo_usart.c: In function 'Usart2SendStr':
+../src/nucleo_usart.c:57:23: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+   for (int i = 0; i < strlen(c); i++)
+                       ^~~~~~
+../src/nucleo_usart.c:57:23: warning: incompatible implicit declaration of built-in function 'strlen'
+../src/nucleo_usart.c:57:23: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-atollic-eabi-gcc -c ../src/main.c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -DSTM32F411xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src/main.o 
+../src/main.c: In function 'main':
+../src/main.c:78:3: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   sprintf(buf, "Disp: %02dx%02d pix", MBED_LCD_GetColumns(), MBED_LCD_GetRows());
+   ^~~~~~~
+../src/main.c:78:3: warning: incompatible implicit declaration of built-in function 'sprintf'
+../src/main.c:78:3: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../src/main.c:95:30: warning: passing argument 1 of 'MBED_LCD_WriteStringXY' makes pointer from integer without a cast [-Wint-conversion]
+       MBED_LCD_WriteStringXY(x, 0, 1);    // example string output
+                              ^
+In file included from ../src/main.c:39:0:
+../src/mbed_shield_lcd.h:33:6: note: expected 'char *' but argument is of type 'char'
+ bool MBED_LCD_WriteStringXY(char *cp, uint8_t col, uint8_t row);  ///< Write sequence of8x8 chars to position counted in chars
+      ^~~~~~~~~~~~~~~~~~~~~~
+arm-atollic-eabi-gcc -c ../src/syscalls.c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -DSTM32F411xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src/syscalls.o 
+arm-atollic-eabi-gcc -c ../src/nucleo_core.c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -DSTM32F411xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src/nucleo_core.o 
+arm-atollic-eabi-gcc -o LCD_hello.elf src/main.o src/mbed_shield_lcd.o src/nucleo_core.o src/nucleo_usart.o src/startup_stm32f411xe.o src/syscalls.o src/system_stm32f4xx.o src/tiny_printf.o -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=LCD_hello.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+/opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/ide/jre/bin/java -jar /opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/Tools/arm-atollic-reports.jar sizeinfo list /media/batekp/Data/Atollic_Workspace/LCD_hello/Debug/LCD_hello.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   5856	   1040	   1564	   8460	   210c	/media/batekp/Data/Atollic_Workspace/LCD_hello/Debug/LCD_hello.elf
+Print size information done
+Generate listing file
+Output sent to: /media/batekp/Data/Atollic_Workspace/LCD_hello/Debug/LCD_hello.list
+Generate listing file done
+Generate build reports done
+
+17:39:48 Build Finished (took 1s.228ms)
+

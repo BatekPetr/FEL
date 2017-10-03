@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;SysTick&apos; to &apos;SysTick_And_TIM3&apos;" description="Rename resource &apos;SysTick&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/SysTick" name="SysTick_And_TIM3" stamp="1506370587211" updateReferences="true"/>&#x0A;&#x0A;</session>

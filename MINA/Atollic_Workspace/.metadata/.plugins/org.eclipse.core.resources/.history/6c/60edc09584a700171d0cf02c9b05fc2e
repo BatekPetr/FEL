@@ -1,0 +1,49 @@
+/*
+ * nucleo_usart.c
+ *
+ *  Created on: Oct 2, 2017
+ *      Author: batekp
+ */
+
+
+// USART Functions
+
+int Usart2Send(char c)
+{
+  while(!(USART2->SR & USART_SR_TXE))
+    ; // cekej dokud neni volny TDR
+
+  USART2->DR = c; // zapis do TDR k odeslani
+  return c;
+}
+
+void Usart2String(char *txt)
+{
+  while(*txt)
+  {
+    Usart2Send(*txt);
+    txt++;
+  }
+}
+
+int Usart2SendStr(char c[])
+{
+  for (int i = 0; i < strlen(c); i++)
+  {
+    Usart2Send(c[i]);
+  }
+  return 0;
+}
+
+int Usart2Recv(void)
+{
+  while(!(USART2->SR & USART_SR_RXNE)) // cekej dokud neprijde
+    ;
+  return USART2->DR; // vycti a vrat jako hodnotu
+}
+
+bool IsUsart2Recv(void) // priznak, ze je neco v bufferu
+{
+  return (USART2->SR & USART_SR_RXNE) != 0;
+  // podminka vynuti true/false vysledek
+}

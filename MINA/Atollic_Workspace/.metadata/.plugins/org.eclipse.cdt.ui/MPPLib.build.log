@@ -1,0 +1,17 @@
+15:53:17 **** Incremental Build of configuration Debug for project MPPLib ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ../src/main.c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -DSTM32F411xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src/main.o 
+arm-atollic-eabi-gcc -o MPPLib.elf src/main.o src/mpp_shield.o src/startup_stm32f411xe.o src/stm_core.o src/system_stm32f4xx.o src/tiny_printf.o -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=MPPLib.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+/opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/ide/jre/bin/java -jar /opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/Tools/arm-atollic-reports.jar sizeinfo list /media/petr/HDD/Atollic_Workspace/MPPLib/Debug/MPPLib.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   1928	     12	   1052	   2992	    bb0	/media/petr/HDD/Atollic_Workspace/MPPLib/Debug/MPPLib.elf
+Print size information done
+Generate listing file
+Output sent to: /media/petr/HDD/Atollic_Workspace/MPPLib/Debug/MPPLib.list
+Generate listing file done
+Generate build reports done
+
+15:53:17 Build Finished (took 601ms)
+
