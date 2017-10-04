@@ -1,5 +1,5 @@
 
-/media/petr/HDD/FEL/MINA/Atollic_Workspace/joystick/Debug/joystick.elf:     file format elf32-littlearm
+/media/batekp/Data/Atollic_Workspace/joystick/Debug/joystick.elf:     file format elf32-littlearm
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
@@ -21,21 +21,21 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
   8 .ARM.attributes 00000030  00000000  00000000  000107a4  2**0
                   CONTENTS, READONLY
-  9 .debug_info   00000b6b  00000000  00000000  000107d4  2**0
+  9 .debug_info   00000b65  00000000  00000000  000107d4  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_abbrev 00000355  00000000  00000000  0001133f  2**0
+ 10 .debug_abbrev 00000355  00000000  00000000  00011339  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_aranges 000000a8  00000000  00000000  00011698  2**3
+ 11 .debug_aranges 000000a8  00000000  00000000  00011690  2**3
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000070  00000000  00000000  00011740  2**3
+ 12 .debug_ranges 00000070  00000000  00000000  00011738  2**3
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_line   00000618  00000000  00000000  000117b0  2**0
+ 13 .debug_line   00000618  00000000  00000000  000117a8  2**0
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_str    00000496  00000000  00000000  00011dc8  2**0
+ 14 .debug_str    00000490  00000000  00000000  00011dc0  2**0
                   CONTENTS, READONLY, DEBUGGING
- 15 .comment      0000007c  00000000  00000000  0001225e  2**0
+ 15 .comment      0000007c  00000000  00000000  00012250  2**0
                   CONTENTS, READONLY
- 16 .debug_frame  00000164  00000000  00000000  000122dc  2**2
+ 16 .debug_frame  00000164  00000000  00000000  000122cc  2**2
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -83,28 +83,28 @@ int main(void)
   */
 
   // Joystick Initialization
-  Nucleo_SetPinGPIO(JOY_UP, ioPortInputFloat);
- 80001de:	2203      	movs	r2, #3
+  Nucleo_SetPinGPIO(JOY_UP, ioPortInputPD);
+ 80001de:	2205      	movs	r2, #5
  80001e0:	2104      	movs	r1, #4
  80001e2:	4857      	ldr	r0, [pc, #348]	; (8000340 <main+0x168>)
  80001e4:	f000 f8dc 	bl	80003a0 <Nucleo_SetPinGPIO>
-  Nucleo_SetPinGPIO(JOY_DOWN, ioPortInputFloat);
- 80001e8:	2203      	movs	r2, #3
+  Nucleo_SetPinGPIO(JOY_DOWN, ioPortInputPU);
+ 80001e8:	2204      	movs	r2, #4
  80001ea:	2100      	movs	r1, #0
  80001ec:	4855      	ldr	r0, [pc, #340]	; (8000344 <main+0x16c>)
  80001ee:	f000 f8d7 	bl	80003a0 <Nucleo_SetPinGPIO>
-  Nucleo_SetPinGPIO(JOY_LEFT, ioPortInputFloat);
- 80001f2:	2203      	movs	r2, #3
+  Nucleo_SetPinGPIO(JOY_LEFT, ioPortInputPU);
+ 80001f2:	2204      	movs	r2, #4
  80001f4:	2101      	movs	r1, #1
  80001f6:	4854      	ldr	r0, [pc, #336]	; (8000348 <main+0x170>)
  80001f8:	f000 f8d2 	bl	80003a0 <Nucleo_SetPinGPIO>
-  Nucleo_SetPinGPIO(JOY_RIGHT, ioPortInputFloat);
- 80001fc:	2203      	movs	r2, #3
+  Nucleo_SetPinGPIO(JOY_RIGHT, ioPortInputPU);
+ 80001fc:	2204      	movs	r2, #4
  80001fe:	2100      	movs	r1, #0
  8000200:	4851      	ldr	r0, [pc, #324]	; (8000348 <main+0x170>)
  8000202:	f000 f8cd 	bl	80003a0 <Nucleo_SetPinGPIO>
-  Nucleo_SetPinGPIO(JOY_PUSH, ioPortInputFloat);
- 8000206:	2203      	movs	r2, #3
+  Nucleo_SetPinGPIO(JOY_PUSH, ioPortInputPU);
+ 8000206:	2204      	movs	r2, #4
  8000208:	2105      	movs	r1, #5
  800020a:	484e      	ldr	r0, [pc, #312]	; (8000344 <main+0x16c>)
  800020c:	f000 f8c8 	bl	80003a0 <Nucleo_SetPinGPIO>

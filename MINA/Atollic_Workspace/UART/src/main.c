@@ -98,7 +98,7 @@ int main(void)
 
   sprintf(buff, "ahoj Peto!\n\r ...\n ...");
   Usart2String(buff);
-  printf("Nazdar ...\n\r"); // Nutna uprava souboru syscalls.c
+  printf("Nazdar tyvole...\n\r"); // Nutna uprava souboru syscalls.c
   printf("Pokus");
 
   /* Infinite loop */

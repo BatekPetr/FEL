@@ -57,11 +57,11 @@ int main(void)
   */
 
   // Joystick Initialization
-  Nucleo_SetPinGPIO(JOY_UP, ioPortInputFloat);
-  Nucleo_SetPinGPIO(JOY_DOWN, ioPortInputFloat);
-  Nucleo_SetPinGPIO(JOY_LEFT, ioPortInputFloat);
-  Nucleo_SetPinGPIO(JOY_RIGHT, ioPortInputFloat);
-  Nucleo_SetPinGPIO(JOY_PUSH, ioPortInputFloat);
+  Nucleo_SetPinGPIO(JOY_UP, ioPortInputPD);
+  Nucleo_SetPinGPIO(JOY_DOWN, ioPortInputPU);
+  Nucleo_SetPinGPIO(JOY_LEFT, ioPortInputPU);
+  Nucleo_SetPinGPIO(JOY_RIGHT, ioPortInputPU);
+  Nucleo_SetPinGPIO(JOY_PUSH, ioPortInputPU);
 
   // RGB led Initialization
   Nucleo_SetPinGPIO(RGB_RED, ioPortOutputPP);

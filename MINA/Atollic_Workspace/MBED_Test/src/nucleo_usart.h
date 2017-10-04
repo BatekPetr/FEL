@@ -17,7 +17,7 @@ int Usart2Send(char c);
 int Usart2Recv(void);
 bool IsUsart2Recv(void);
 void Usart2String(char *txt);
-void Usart2String(char *txt);
 int Usart2SendStr(char c[]);
+void Usart2RecvLine(char *buf);
 
 #endif /* NUCLEO_USART_H_ */

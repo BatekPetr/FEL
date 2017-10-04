@@ -74,7 +74,7 @@ Discarded input sections
                 0x0000000000000000       0x60 src/tiny_printf.o
  .debug_ranges  0x0000000000000000       0x50 src/tiny_printf.o
  .debug_line    0x0000000000000000      0x298 src/tiny_printf.o
- .debug_str     0x0000000000000000      0x691 src/tiny_printf.o
+ .debug_str     0x0000000000000000      0x68b src/tiny_printf.o
  .comment       0x0000000000000000       0x7d src/tiny_printf.o
  .debug_frame   0x0000000000000000      0x1bc src/tiny_printf.o
  .ARM.attributes
@@ -429,12 +429,12 @@ LOAD /opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/ARMTools/bin/../lib/gcc/arm-at
                 0x00000000000001f5       0x22 /opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtn.o
 OUTPUT(RGBintensity.elf elf32-littlearm)
 
-.debug_info     0x0000000000000000      0xf9d
+.debug_info     0x0000000000000000      0xf97
  .debug_info    0x0000000000000000       0xd0 src/main.o
  .debug_info    0x00000000000000d0      0x4db src/rgb_led_driver.o
- .debug_info    0x00000000000005ab       0x80 src/startup_stm32f411xe.o
- .debug_info    0x000000000000062b      0x4a8 src/stm_core.o
- .debug_info    0x0000000000000ad3      0x4ca src/system_stm32f4xx.o
+ .debug_info    0x00000000000005ab       0x7a src/startup_stm32f411xe.o
+ .debug_info    0x0000000000000625      0x4a8 src/stm_core.o
+ .debug_info    0x0000000000000acd      0x4ca src/system_stm32f4xx.o
 
 .debug_abbrev   0x0000000000000000      0x3f4
  .debug_abbrev  0x0000000000000000       0x7a src/main.o
@@ -469,15 +469,15 @@ OUTPUT(RGBintensity.elf elf32-littlearm)
  .debug_line    0x00000000000003d0      0x23c src/stm_core.o
  .debug_line    0x000000000000060c      0x1bf src/system_stm32f4xx.o
 
-.debug_str      0x0000000000000000      0x545
- .debug_str     0x0000000000000000      0x1a4 src/main.o
-                                        0x1e9 (size before relaxing)
- .debug_str     0x00000000000001a4      0x247 src/rgb_led_driver.o
-                                        0x422 (size before relaxing)
- .debug_str     0x00000000000003eb       0x98 src/stm_core.o
-                                        0x418 (size before relaxing)
- .debug_str     0x0000000000000483       0xc2 src/system_stm32f4xx.o
-                                        0x39c (size before relaxing)
+.debug_str      0x0000000000000000      0x53f
+ .debug_str     0x0000000000000000      0x19e src/main.o
+                                        0x1e3 (size before relaxing)
+ .debug_str     0x000000000000019e      0x247 src/rgb_led_driver.o
+                                        0x41c (size before relaxing)
+ .debug_str     0x00000000000003e5       0x98 src/stm_core.o
+                                        0x412 (size before relaxing)
+ .debug_str     0x000000000000047d       0xc2 src/system_stm32f4xx.o
+                                        0x396 (size before relaxing)
 
 .comment        0x0000000000000000       0x7c
  .comment       0x0000000000000000       0x7c src/main.o

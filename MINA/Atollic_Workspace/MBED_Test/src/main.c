@@ -84,50 +84,32 @@ int main(void)
   /* Infinite loop */
   while (1)
   {
-    joy_combination = (uint)GPIORead(JOY_UP)*16 + GPIORead(JOY_DOWN)*8 +
-                     GPIORead(JOY_LEFT)*4 + GPIORead(JOY_RIGHT)*2 +
-                    GPIORead(JOY_PUSH);
+    // read Joystick combination
+    joy_combination = readJoystick();
 
-    switch(joy_combination)
+    if (joy_combination != 0)   // Joystick was used
     {
-      case 0b1:
-        //sprintf(buff, "Pushed!!! \n\r");
-        //Usart2String(buff);
-        //printf("P\n\r");
-        Usart2Send('P');
-        //GPIOWrite(RGB_RED, 0);
-        //GPIOWrite(RGB_RED, 0);
-        break;
-      case 0b10:
-        //printf("R\n\r");
-        Usart2Send('R');
-        //GPIOWrite(RGB_BLUE, 0);
-        break;
-      case 0b100:
-        //printf("L\n\r");
-        Usart2Send('L');
-        //GPIOWrite(RGB_GREEN, 0);
-        break;
-      case 0b1000:
-        //printf("D\n\r");
-        Usart2Send('D');
-        //GPIOWrite(RGB_GREEN, 0);
-        //GPIOWrite(RGB_RED, 0);
-        break;
-      case 0b10000:
-        //printf("U\n\r");
-        Usart2Send('U');
-        //GPIOWrite(RGB_BLUE, 0);
-        //GPIOWrite(RGB_RED, 0);
-        break;
-        /*
-      default:
-        GPIOWrite(RGB_RED, 1);
-        GPIOWrite(RGB_GREEN, 1);
-        GPIOWrite(RGB_BLUE, 1);
-        break;
-        */
+      if ( (joy_combination & 1 ) != 0)
+      {
+        sprintf(buff, "Pushed, ");
+        Usart2String(buff);
+      }
+      if ( (joy_combination & (1 << 1) ) != 0)
+        printf("Right, ");
+      if ( (joy_combination & (1 << 2) ) != 0)
+        printf("Left, ");
+      if ( (joy_combination & (1 << 3) ) != 0)
+        printf("Down, ");
+      if ( (joy_combination & (1 << 4) ) != 0)
+        printf("Up, ");
+
+      printf("\r\n");
     }
 
+    if (IsUsart2Recv())
+    {
+      Usart2RecvLine(buff);
+      Usart2String(buff);
+    }
   }
 }
