@@ -78,7 +78,7 @@ Discarded input sections
                 0x0000000000000000       0xc8 src/syscalls.o
  .debug_ranges  0x0000000000000000       0xb8 src/syscalls.o
  .debug_line    0x0000000000000000      0x3c7 src/syscalls.o
- .debug_str     0x0000000000000000      0x8ef src/syscalls.o
+ .debug_str     0x0000000000000000      0x8f5 src/syscalls.o
  .comment       0x0000000000000000       0x7d src/syscalls.o
  .debug_frame   0x0000000000000000      0x35c src/syscalls.o
  .ARM.attributes
@@ -115,7 +115,7 @@ Discarded input sections
                 0x0000000000000000       0x60 src/tiny_printf.o
  .debug_ranges  0x0000000000000000       0x50 src/tiny_printf.o
  .debug_line    0x0000000000000000      0x298 src/tiny_printf.o
- .debug_str     0x0000000000000000      0x687 src/tiny_printf.o
+ .debug_str     0x0000000000000000      0x68d src/tiny_printf.o
  .comment       0x0000000000000000       0x7d src/tiny_printf.o
  .debug_frame   0x0000000000000000      0x1bc src/tiny_printf.o
  .ARM.attributes
@@ -470,11 +470,11 @@ LOAD /opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/ARMTools/bin/../lib/gcc/arm-at
                 0x0000000000000156       0x22 /opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtn.o
 OUTPUT(joystick.elf elf32-littlearm)
 
-.debug_info     0x0000000000000000      0xb65
+.debug_info     0x0000000000000000      0xb6b
  .debug_info    0x0000000000000000      0x1c1 src/main.o
- .debug_info    0x00000000000001c1       0x76 src/startup_stm32f411xe.o
- .debug_info    0x0000000000000237      0x464 src/stm_core.o
- .debug_info    0x000000000000069b      0x4ca src/system_stm32f4xx.o
+ .debug_info    0x00000000000001c1       0x7c src/startup_stm32f411xe.o
+ .debug_info    0x000000000000023d      0x464 src/stm_core.o
+ .debug_info    0x00000000000006a1      0x4ca src/system_stm32f4xx.o
 
 .debug_abbrev   0x0000000000000000      0x355
  .debug_abbrev  0x0000000000000000       0xeb src/main.o
@@ -504,13 +504,13 @@ OUTPUT(joystick.elf elf32-littlearm)
  .debug_line    0x0000000000000233      0x226 src/stm_core.o
  .debug_line    0x0000000000000459      0x1bf src/system_stm32f4xx.o
 
-.debug_str      0x0000000000000000      0x490
- .debug_str     0x0000000000000000      0x258 src/main.o
-                                        0x29d (size before relaxing)
- .debug_str     0x0000000000000258      0x176 src/stm_core.o
-                                        0x3f5 (size before relaxing)
- .debug_str     0x00000000000003ce       0xc2 src/system_stm32f4xx.o
-                                        0x392 (size before relaxing)
+.debug_str      0x0000000000000000      0x496
+ .debug_str     0x0000000000000000      0x25e src/main.o
+                                        0x2a3 (size before relaxing)
+ .debug_str     0x000000000000025e      0x176 src/stm_core.o
+                                        0x3fb (size before relaxing)
+ .debug_str     0x00000000000003d4       0xc2 src/system_stm32f4xx.o
+                                        0x398 (size before relaxing)
 
 .comment        0x0000000000000000       0x7c
  .comment       0x0000000000000000       0x7c src/main.o

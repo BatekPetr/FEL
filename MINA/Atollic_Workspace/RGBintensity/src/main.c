@@ -50,5 +50,5 @@ SOFTWARE.
 int main(void)
 {
   initRGB_LED_PWM();
-  set_RGB_LED_PWM(0,255,255);
+  set_RGB_LED_PWM(125,0,255);
 }

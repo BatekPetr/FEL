@@ -64,14 +64,14 @@ int main(void)
   setvbuf(stdin, NULL, _IONBF, 0);
 
   SystemCoreClockUpdate();
-  SysTick_Config(SystemCoreClock / 1000);
+  //SysTick_Config(SystemCoreClock / 1000);
 
   // Joystick Initialization
-  Nucleo_SetPinGPIO(JOY_UP, ioPortInputPU);
-  Nucleo_SetPinGPIO(JOY_DOWN, ioPortInputPU);
-  Nucleo_SetPinGPIO(JOY_LEFT, ioPortInputPU);
-  Nucleo_SetPinGPIO(JOY_RIGHT, ioPortInputPU);
-  Nucleo_SetPinGPIO(JOY_PUSH, ioPortInputPU);
+  Nucleo_SetPinGPIO(JOY_UP, ioPortInputFloat);
+  Nucleo_SetPinGPIO(JOY_DOWN, ioPortInputFloat);
+  Nucleo_SetPinGPIO(JOY_LEFT, ioPortInputFloat);
+  Nucleo_SetPinGPIO(JOY_RIGHT, ioPortInputFloat);
+  Nucleo_SetPinGPIO(JOY_PUSH, ioPortInputFloat);
 
   // RGB led Initialization
   Nucleo_SetPinGPIO(RGB_RED, ioPortOutputPP);
@@ -84,7 +84,7 @@ int main(void)
   /* Infinite loop */
   while (1)
   {
-    joy_combination = GPIORead(JOY_UP)*16 + GPIORead(JOY_DOWN)*8 +
+    joy_combination = (uint)GPIORead(JOY_UP)*16 + GPIORead(JOY_DOWN)*8 +
                      GPIORead(JOY_LEFT)*4 + GPIORead(JOY_RIGHT)*2 +
                     GPIORead(JOY_PUSH);
 
@@ -93,25 +93,30 @@ int main(void)
       case 0b1:
         //sprintf(buff, "Pushed!!! \n\r");
         //Usart2String(buff);
-        printf("P\n\r");
+        //printf("P\n\r");
+        Usart2Send('P');
         //GPIOWrite(RGB_RED, 0);
         //GPIOWrite(RGB_RED, 0);
         break;
       case 0b10:
-        printf("R\n\r");
+        //printf("R\n\r");
+        Usart2Send('R');
         //GPIOWrite(RGB_BLUE, 0);
         break;
       case 0b100:
-        printf("L\n\r");
+        //printf("L\n\r");
+        Usart2Send('L');
         //GPIOWrite(RGB_GREEN, 0);
         break;
       case 0b1000:
-        printf("D\n\r");
+        //printf("D\n\r");
+        Usart2Send('D');
         //GPIOWrite(RGB_GREEN, 0);
         //GPIOWrite(RGB_RED, 0);
         break;
       case 0b10000:
-        printf("U\n\r");
+        //printf("U\n\r");
+        Usart2Send('U');
         //GPIOWrite(RGB_BLUE, 0);
         //GPIOWrite(RGB_RED, 0);
         break;
