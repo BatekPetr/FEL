@@ -177,3 +177,350 @@ Generate listing file done
 Generate build reports done
 Info: Nothing to build for MBED_Test
 Info: Nothing to build for MBED_Test
+15:09:37 **** Incremental Build of configuration Debug for project MBED_Test ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ../src/main.c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -DSTM32F411xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src/main.o 
+../src/main.c: In function 'main':
+../src/main.c:82:8: warning: unused variable 'buff' [-Wunused-variable]
+   char buff [100];
+        ^~~~
+arm-atollic-eabi-gcc -o MBED_Test.elf src/main.o src/nucleo_core.o src/nucleo_usart.o src/startup_stm32f411xe.o src/syscalls.o src/system_stm32f4xx.o src/tiny_printf.o -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=MBED_Test.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+/opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/ide/jre/bin/java -jar /opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/Tools/arm-atollic-reports.jar sizeinfo list /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   5492	    108	   1068	   6668	   1a0c	/media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf
+Print size information done
+Generate listing file
+Output sent to: /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.list
+Generate listing file done
+Generate build reports done
+Info: Nothing to build for MBED_Test
+Info: Nothing to build for MBED_Test
+15:12:14 **** Incremental Build of configuration Debug for project MBED_Test ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ../src/main.c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -DSTM32F411xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src/main.o 
+../src/main.c: In function 'main':
+../src/main.c:82:8: warning: unused variable 'buff' [-Wunused-variable]
+   char buff [100];
+        ^~~~
+arm-atollic-eabi-gcc -o MBED_Test.elf src/main.o src/nucleo_core.o src/nucleo_usart.o src/startup_stm32f411xe.o src/syscalls.o src/system_stm32f4xx.o src/tiny_printf.o -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=MBED_Test.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+/opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/ide/jre/bin/java -jar /opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/Tools/arm-atollic-reports.jar sizeinfo list /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   5492	    108	   1068	   6668	   1a0c	/media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf
+Print size information done
+Generate listing file
+Output sent to: /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.list
+Generate listing file done
+Generate build reports done
+15:16:23 **** Incremental Build of configuration Debug for project MBED_Test ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ../src/main.c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -DSTM32F411xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src/main.o 
+arm-atollic-eabi-gcc -o MBED_Test.elf src/main.o src/nucleo_core.o src/nucleo_usart.o src/startup_stm32f411xe.o src/syscalls.o src/system_stm32f4xx.o src/tiny_printf.o -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=MBED_Test.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+/opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/ide/jre/bin/java -jar /opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/Tools/arm-atollic-reports.jar sizeinfo list /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   5576	    108	   1068	   6752	   1a60	/media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf
+Print size information done
+Generate listing file
+Output sent to: /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.list
+Generate listing file done
+Generate build reports done
+15:18:34 **** Incremental Build of configuration Debug for project MBED_Test ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ../src/main.c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -DSTM32F411xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src/main.o 
+../src/main.c: In function 'main':
+../src/main.c:94:20: warning: passing argument 1 of 'Usart2Send' makes integer from pointer without a cast [-Wint-conversion]
+         Usart2Send("P");
+                    ^~~
+In file included from ../src/main.c:33:0:
+../src/nucleo_usart.h:16:5: note: expected 'char' but argument is of type 'char *'
+ int Usart2Send(char c);
+     ^~~~~~~~~~
+arm-atollic-eabi-gcc -o MBED_Test.elf src/main.o src/nucleo_core.o src/nucleo_usart.o src/startup_stm32f411xe.o src/syscalls.o src/system_stm32f4xx.o src/tiny_printf.o -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=MBED_Test.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+/opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/ide/jre/bin/java -jar /opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/Tools/arm-atollic-reports.jar sizeinfo list /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   5596	    108	   1068	   6772	   1a74	/media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf
+Print size information done
+Generate listing file
+Output sent to: /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.list
+Generate listing file done
+Generate build reports done
+15:19:24 **** Incremental Build of configuration Debug for project MBED_Test ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ../src/main.c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -DSTM32F411xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src/main.o 
+../src/main.c: In function 'main':
+../src/main.c:94:20: warning: passing argument 1 of 'Usart2Send' makes integer from pointer without a cast [-Wint-conversion]
+         Usart2Send("P");
+                    ^~~
+In file included from ../src/main.c:33:0:
+../src/nucleo_usart.h:16:5: note: expected 'char' but argument is of type 'char *'
+ int Usart2Send(char c);
+     ^~~~~~~~~~
+arm-atollic-eabi-gcc -o MBED_Test.elf src/main.o src/nucleo_core.o src/nucleo_usart.o src/startup_stm32f411xe.o src/syscalls.o src/system_stm32f4xx.o src/tiny_printf.o -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=MBED_Test.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+/opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/ide/jre/bin/java -jar /opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/Tools/arm-atollic-reports.jar sizeinfo list /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   5860	    112	   1068	   7040	   1b80	/media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf
+Print size information done
+Generate listing file
+Output sent to: /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.list
+Generate listing file done
+Generate build reports done
+15:20:51 **** Incremental Build of configuration Debug for project MBED_Test ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ../src/main.c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -DSTM32F411xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src/main.o 
+arm-atollic-eabi-gcc -o MBED_Test.elf src/main.o src/nucleo_core.o src/nucleo_usart.o src/startup_stm32f411xe.o src/syscalls.o src/system_stm32f4xx.o src/tiny_printf.o -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=MBED_Test.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+/opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/ide/jre/bin/java -jar /opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/Tools/arm-atollic-reports.jar sizeinfo list /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   5848	    112	   1068	   7028	   1b74	/media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf
+Print size information done
+Generate listing file
+Output sent to: /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.list
+Generate listing file done
+Generate build reports done
+15:21:47 **** Incremental Build of configuration Debug for project UART ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ../src/main.c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -DSTM32F411xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src/main.o 
+arm-atollic-eabi-gcc -o UART.elf src/main.o src/nucleo_core.o src/nucleo_usart.o src/startup_stm32f411xe.o src/syscalls.o src/system_stm32f4xx.o src/tiny_printf.o -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=UART.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+/opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/ide/jre/bin/java -jar /opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/Tools/arm-atollic-reports.jar sizeinfo list /media/batekp/Data/FEL/MINA/Atollic_Workspace/UART/Debug/UART.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   6716	    112	   1072	   7900	   1edc	/media/batekp/Data/FEL/MINA/Atollic_Workspace/UART/Debug/UART.elf
+Print size information done
+Generate listing file
+Output sent to: /media/batekp/Data/FEL/MINA/Atollic_Workspace/UART/Debug/UART.list
+Generate listing file done
+Generate build reports done
+Info: Nothing to build for MBED_Test
+15:32:06 **** Incremental Build of configuration Debug for project MBED_Test ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ../src/mina_shield.c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -DSTM32F411xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src/mina_shield.o 
+../src/mina_shield.c: In function 'readJoystick':
+../src/mina_shield.c:28:5: error: 'push' undeclared (first use in this function)
+     push = 0b00001;
+     ^~~~
+../src/mina_shield.c:28:5: note: each undeclared identifier is reported only once for each function it appears in
+../src/mina_shield.c:17:11: warning: unused variable 'pushed' [-Wunused-variable]
+   uint8_t pushed = 0;
+           ^~~~~~
+../src/mina_shield.c:31:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+15:32:21 **** Incremental Build of configuration Debug for project MBED_Test ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ../src/mina_shield.c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -DSTM32F411xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src/mina_shield.o 
+arm-atollic-eabi-gcc -c ../src/main.c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -DSTM32F411xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src/main.o 
+arm-atollic-eabi-gcc -o MBED_Test.elf src/main.o src/mina_shield.o src/nucleo_core.o src/nucleo_usart.o src/startup_stm32f411xe.o src/syscalls.o src/system_stm32f4xx.o src/tiny_printf.o -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=MBED_Test.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+/opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/ide/jre/bin/java -jar /opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/Tools/arm-atollic-reports.jar sizeinfo list /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   5940	    112	   1068	   7120	   1bd0	/media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf
+Print size information done
+Generate listing file
+Output sent to: /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.list
+Generate listing file done
+Generate build reports done
+15:37:39 **** Incremental Build of configuration Debug for project MBED_Test ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ../src/main.c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -DSTM32F411xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src/main.o 
+../src/main.c:107:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+15:38:21 **** Incremental Build of configuration Debug for project MBED_Test ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ../src/main.c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -DSTM32F411xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src/main.o 
+arm-atollic-eabi-gcc -o MBED_Test.elf src/main.o src/mina_shield.o src/nucleo_core.o src/nucleo_usart.o src/startup_stm32f411xe.o src/syscalls.o src/system_stm32f4xx.o src/tiny_printf.o -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=MBED_Test.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+/opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/ide/jre/bin/java -jar /opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/Tools/arm-atollic-reports.jar sizeinfo list /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   5908	    112	   1068	   7088	   1bb0	/media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf
+Print size information done
+Generate listing file
+Output sent to: /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.list
+Generate listing file done
+Generate build reports done
+15:40:05 **** Incremental Build of configuration Debug for project MBED_Test ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ../src/main.c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -DSTM32F411xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src/main.o 
+arm-atollic-eabi-gcc -o MBED_Test.elf src/main.o src/mina_shield.o src/nucleo_core.o src/nucleo_usart.o src/startup_stm32f411xe.o src/syscalls.o src/system_stm32f4xx.o src/tiny_printf.o -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=MBED_Test.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+/opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/ide/jre/bin/java -jar /opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/Tools/arm-atollic-reports.jar sizeinfo list /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   6040	    112	   1068	   7220	   1c34	/media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf
+Print size information done
+Generate listing file
+Output sent to: /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.list
+Generate listing file done
+Generate build reports done
+15:41:02 **** Incremental Build of configuration Debug for project MBED_Test ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ../src/main.c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -DSTM32F411xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src/main.o 
+arm-atollic-eabi-gcc -o MBED_Test.elf src/main.o src/mina_shield.o src/nucleo_core.o src/nucleo_usart.o src/startup_stm32f411xe.o src/syscalls.o src/system_stm32f4xx.o src/tiny_printf.o -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=MBED_Test.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+/opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/ide/jre/bin/java -jar /opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/Tools/arm-atollic-reports.jar sizeinfo list /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   6032	    112	   1068	   7212	   1c2c	/media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf
+Print size information done
+Generate listing file
+Output sent to: /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.list
+Generate listing file done
+Generate build reports done
+15:43:21 **** Incremental Build of configuration Debug for project MBED_Test ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ../src/main.c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -DSTM32F411xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src/main.o 
+arm-atollic-eabi-gcc -o MBED_Test.elf src/main.o src/mina_shield.o src/nucleo_core.o src/nucleo_usart.o src/startup_stm32f411xe.o src/syscalls.o src/system_stm32f4xx.o src/tiny_printf.o -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=MBED_Test.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+/opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/ide/jre/bin/java -jar /opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/Tools/arm-atollic-reports.jar sizeinfo list /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   6032	    112	   1068	   7212	   1c2c	/media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf
+Print size information done
+Generate listing file
+Output sent to: /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.list
+Generate listing file done
+Generate build reports done
+17:46:02 **** Incremental Build of configuration Debug for project MBED_Test ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ../src/nucleo_usart.c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -DSTM32F411xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src/nucleo_usart.o 
+arm-atollic-eabi-gcc -c ../src/main.c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -DSTM32F411xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src/main.o 
+arm-atollic-eabi-gcc -o MBED_Test.elf src/main.o src/mina_shield.o src/nucleo_core.o src/nucleo_usart.o src/startup_stm32f411xe.o src/syscalls.o src/system_stm32f4xx.o src/tiny_printf.o -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=MBED_Test.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+/opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/ide/jre/bin/java -jar /opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/Tools/arm-atollic-reports.jar sizeinfo list /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   6136	    112	   1068	   7316	   1c94	/media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf
+Print size information done
+Generate listing file
+Output sent to: /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.list
+Generate listing file done
+Generate build reports done
+18:05:24 **** Incremental Build of configuration Debug for project MBED_Test ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ../src/main.c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -DSTM32F411xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src/main.o 
+arm-atollic-eabi-gcc -o MBED_Test.elf src/main.o src/mina_shield.o src/nucleo_core.o src/nucleo_usart.o src/startup_stm32f411xe.o src/syscalls.o src/system_stm32f4xx.o src/tiny_printf.o -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=MBED_Test.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+/opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/ide/jre/bin/java -jar /opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/Tools/arm-atollic-reports.jar sizeinfo list /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   6032	    112	   1068	   7212	   1c2c	/media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf
+Print size information done
+Generate listing file
+Output sent to: /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.list
+Generate listing file done
+Generate build reports done
+18:06:50 **** Incremental Build of configuration Debug for project MBED_Test ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ../src/main.c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -DSTM32F411xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src/main.o 
+arm-atollic-eabi-gcc -o MBED_Test.elf src/main.o src/mina_shield.o src/nucleo_core.o src/nucleo_usart.o src/startup_stm32f411xe.o src/syscalls.o src/system_stm32f4xx.o src/tiny_printf.o -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=MBED_Test.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+/opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/ide/jre/bin/java -jar /opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/Tools/arm-atollic-reports.jar sizeinfo list /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   6144	    112	   1068	   7324	   1c9c	/media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf
+Print size information done
+Generate listing file
+Output sent to: /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.list
+Generate listing file done
+Generate build reports done
+18:11:30 **** Incremental Build of configuration Debug for project MBED_Test ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ../src/nucleo_usart.c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -DSTM32F411xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src/nucleo_usart.o 
+../src/nucleo_usart.c: In function 'Usart2RecvLine':
+../src/nucleo_usart.c:86:18: warning: comparison between pointer and integer
+   while(bufPtr++ != '\n');
+                  ^~
+arm-atollic-eabi-gcc -o MBED_Test.elf src/main.o src/mina_shield.o src/nucleo_core.o src/nucleo_usart.o src/startup_stm32f411xe.o src/syscalls.o src/system_stm32f4xx.o src/tiny_printf.o -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=MBED_Test.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+src/main.o: In function `main':
+/media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/../src/main.c:111: undefined reference to `Usart2RecvStr'
+collect2: error: ld returned 1 exit status
+18:11:49 **** Incremental Build of configuration Debug for project MBED_Test ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ../src/nucleo_usart.c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -DSTM32F411xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src/nucleo_usart.o 
+../src/nucleo_usart.c: In function 'Usart2RecvLine':
+../src/nucleo_usart.c:86:18: warning: comparison between pointer and integer
+   while(bufPtr++ != '\n');
+                  ^~
+arm-atollic-eabi-gcc -c ../src/main.c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -DSTM32F411xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src/main.o 
+arm-atollic-eabi-gcc -o MBED_Test.elf src/main.o src/mina_shield.o src/nucleo_core.o src/nucleo_usart.o src/startup_stm32f411xe.o src/syscalls.o src/system_stm32f4xx.o src/tiny_printf.o -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=MBED_Test.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+/opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/ide/jre/bin/java -jar /opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/Tools/arm-atollic-reports.jar sizeinfo list /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   6148	    112	   1068	   7328	   1ca0	/media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf
+Print size information done
+Generate listing file
+Output sent to: /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.list
+Generate listing file done
+Generate build reports done
+18:13:16 **** Incremental Build of configuration Debug for project MBED_Test ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ../src/nucleo_usart.c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -DSTM32F411xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src/nucleo_usart.o 
+arm-atollic-eabi-gcc -o MBED_Test.elf src/main.o src/mina_shield.o src/nucleo_core.o src/nucleo_usart.o src/startup_stm32f411xe.o src/syscalls.o src/system_stm32f4xx.o src/tiny_printf.o -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=MBED_Test.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+/opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/ide/jre/bin/java -jar /opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/Tools/arm-atollic-reports.jar sizeinfo list /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   6148	    112	   1068	   7328	   1ca0	/media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf
+Print size information done
+Generate listing file
+Output sent to: /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.list
+Generate listing file done
+Generate build reports done
+18:14:14 **** Incremental Build of configuration Debug for project MBED_Test ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ../src/nucleo_usart.c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -DSTM32F411xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src/nucleo_usart.o 
+arm-atollic-eabi-gcc -o MBED_Test.elf src/main.o src/mina_shield.o src/nucleo_core.o src/nucleo_usart.o src/startup_stm32f411xe.o src/syscalls.o src/system_stm32f4xx.o src/tiny_printf.o -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=MBED_Test.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+/opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/ide/jre/bin/java -jar /opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/Tools/arm-atollic-reports.jar sizeinfo list /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   6148	    112	   1068	   7328	   1ca0	/media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf
+Print size information done
+Generate listing file
+Output sent to: /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.list
+Generate listing file done
+Generate build reports done
+Info: Nothing to build for MBED_Test
+18:20:01 **** Incremental Build of configuration Debug for project MBED_Test ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ../src/nucleo_usart.c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -DSTM32F411xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src/nucleo_usart.o 
+arm-atollic-eabi-gcc -o MBED_Test.elf src/main.o src/mina_shield.o src/nucleo_core.o src/nucleo_usart.o src/startup_stm32f411xe.o src/syscalls.o src/system_stm32f4xx.o src/tiny_printf.o -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=MBED_Test.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+/opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/ide/jre/bin/java -jar /opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/Tools/arm-atollic-reports.jar sizeinfo list /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   6148	    112	   1068	   7328	   1ca0	/media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf
+Print size information done
+Generate listing file
+Output sent to: /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.list
+Generate listing file done
+Generate build reports done
+Info: Nothing to build for MBED_Test
+18:22:48 **** Incremental Build of configuration Debug for project MBED_Test ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c ../src/nucleo_usart.c -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -DSTM32F411xE -I../src -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -specs=nano.specs -o src/nucleo_usart.o 
+arm-atollic-eabi-gcc -o MBED_Test.elf src/main.o src/mina_shield.o src/nucleo_core.o src/nucleo_usart.o src/startup_stm32f411xe.o src/syscalls.o src/system_stm32f4xx.o src/tiny_printf.o -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T../stm32_flash.ld -specs=nosys.specs -static -Wl,-cref,-u,Reset_Handler -Wl,-Map=MBED_Test.map -Wl,--gc-sections -Wl,--defsym=malloc_getpagesize_P=0x80 -Wl,--start-group -lc -lm -Wl,--end-group -specs=nano.specs 
+/opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/ide/jre/bin/java -jar /opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/Tools/arm-atollic-reports.jar sizeinfo list /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf 
+Generate build reports...
+Print size information
+   text	   data	    bss	    dec	    hex	filename
+   6148	    112	   1068	   7328	   1ca0	/media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.elf
+Print size information done
+Generate listing file
+Output sent to: /media/batekp/Data/FEL/MINA/Atollic_Workspace/MBED_Test/Debug/MBED_Test.list
+Generate listing file done
+Generate build reports done

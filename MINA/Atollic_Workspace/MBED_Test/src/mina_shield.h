@@ -20,4 +20,6 @@
 #define JOY_RIGHT   GPIOC,0
 #define JOY_PUSH    GPIOB,5
 
+uint8_t readJoystick();
+
 #endif /* MINA_SHIELD_H_ */

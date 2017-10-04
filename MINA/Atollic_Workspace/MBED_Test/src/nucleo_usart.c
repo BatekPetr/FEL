@@ -74,3 +74,16 @@ bool IsUsart2Recv(void) // priznak, ze je neco v bufferu
   return (USART2->SR & USART_SR_RXNE) != 0;
   // podminka vynuti true/false vysledek
 }
+
+void Usart2RecvLine(char *buf)
+{
+  char *bufPtr = buf;
+  if (IsUsart2Recv())
+  {
+    do
+    {
+      *bufPtr = (char)Usart2Recv();
+    }
+    while(*bufPtr++ != '\r');
+  }
+}
