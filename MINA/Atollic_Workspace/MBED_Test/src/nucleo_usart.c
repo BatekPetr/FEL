@@ -84,6 +84,7 @@ void Usart2RecvLine(char *buf)
     {
       *bufPtr = (char)Usart2Recv();
     }
-    while(*bufPtr++ != '\r');
+    while( !( (*bufPtr == 0x0A) | (*bufPtr++ == 0x0D)) ); // Waiting for LF Line Feed or CR Carriage Return
+    *(--bufPtr) = '\0';
   }
 }

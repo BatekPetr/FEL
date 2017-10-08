@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;MandelbrotHW/src/mandelbrot.c&apos; to &apos;mandelbrot.h&apos;" description="Rename resource &apos;mandelbrot.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/mandelbrot.c" name="mandelbrot.h" stamp="1507494908434" updateReferences="true"/>
+</session>

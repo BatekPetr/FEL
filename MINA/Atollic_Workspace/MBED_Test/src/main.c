@@ -29,9 +29,13 @@ SOFTWARE.
 
 /* Includes */
 #include <stdio.h>
+#include <inttypes.h> // Macro for parsing uint32_t
 #include "stm32f4xx.h"
 #include "nucleo_usart.h"
 #include "mina_shield.h"
+#include "rgb_led_driver.h"
+#include "mbed_shield_lcd.h"
+
 /* Private macro */
 /* Private variables */
 /* Private function prototypes */
@@ -74,13 +78,27 @@ int main(void)
   Nucleo_SetPinGPIO(JOY_PUSH, ioPortInputFloat);
 
   // RGB led Initialization
-  Nucleo_SetPinGPIO(RGB_RED, ioPortOutputPP);
-  Nucleo_SetPinGPIO(RGB_GREEN, ioPortOutputPP);
-  Nucleo_SetPinGPIO(RGB_BLUE, ioPortOutputPP);
+  initRGB_LED_PWM();
+  set_RGB_LED_PWM(0,0,0);
+
+  // configure LCD display
+  if (!MBED_LCD_init())             // check success
+  {
+    while(1)                        // defined stop when it fails
+      ;
+  }
+
+  MBED_LCD_InitVideoRam(0x00);      // fill content with 0 = clear memory buffer
+
+  char bufLCD[128];
+  sprintf(bufLCD, "R: %d G: %d B: %d", 0, 0, 0);
+  MBED_LCD_WriteStringXY(bufLCD, 0, 2);    // example string output
+  MBED_LCD_VideoRam2LCD();          // move changes in video buffer to LCD
 
   unsigned short joy_combination = 0;
   char buff [100];
 
+  uint32_t r,g,b;
   /* Infinite loop */
   while (1)
   {
@@ -110,6 +128,14 @@ int main(void)
     {
       Usart2RecvLine(buff);
       Usart2String(buff);
+      sscanf(buff, "%" SCNu32 "%" SCNu32 "%" SCNu32, &r, &g, &b); //SCNu32 je format specifier pro uint32_t definovany v <inttypes.h>
+      set_RGB_LED_PWM(r,g,b);
+      sprintf(bufLCD, "R:%u G:%u B:%u", r, g, b);
+      MBED_LCD_InitVideoRam(0x00);      // fill content with 0 = clear memory buffer
+      MBED_LCD_WriteStringXY(bufLCD, 0, 2);    // example string output
+      MBED_LCD_VideoRam2LCD();          // move changes in video buffer to LCD
+
+
     }
   }
 }

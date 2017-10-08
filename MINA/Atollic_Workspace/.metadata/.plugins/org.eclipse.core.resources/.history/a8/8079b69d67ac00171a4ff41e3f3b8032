@@ -1,0 +1,103 @@
+/*
+ * mandelbrot.c
+ *
+ *  Created on: Oct 8, 2017
+ *      Author: petr
+ */
+
+
+const int pixelWidth = 128, pixelHeight = 32;
+const float centerXreset = 1.5f, centerYreset = 1.0f,
+  zoomXreset = 1, zoomYreset = 1;
+
+float centerX = 0, centerY = 0;
+float zoomX = 1, zoomY = 1;
+
+void CalculateMandel()
+{
+  int tholdBW = (int)updnTreshold.Value;
+  int tholdCenter = (int)updnCenter.Value;
+
+  pbRealSize.SuspendLayout();
+  pbZoomed.SuspendLayout();
+
+  Stopwatch sw = new Stopwatch();
+  sw.Start();
+
+  for (int yy = 0; yy < pixelHeight; yy++)
+  {
+    for (int xx = 0; xx < pixelWidth; xx++)
+    {
+      float x0 = xx;
+      float y0 = yy;
+      x0 = x0 / (pixelWidth / 2 * zoomX) - centerX;
+      y0 = y0 / (pixelHeight / 2 * zoomY) - centerY;
+      // z = z * z + c
+
+      float x = 0f;
+      float y = 0f;
+      float xtemp = 0f;
+
+      int iter = 0;
+
+      while (((x * x + y * y) < 4) && (iter < 9))
+      {
+        xtemp = x * x - y * y + x0;
+        y = 2 * x * y + y0;
+        x = xtemp;
+        iter++;
+      }
+
+      float z = x * x + y * y;
+
+      // !!! for B/W LCD use only else part !!!
+      if (chkColor.Checked)
+      {
+        if (z < tholdCenter)
+          bmp.SetPixel(xx, yy, Color.Black);
+        else
+          bmp.SetPixel(xx, yy, col[iter]);
+      }
+      else
+      {
+        if(z < 4)
+          MBED_LCD_PutPixel(xx, yy, true);
+        else
+          MBED_LCD_PutPixel(xx, yy, false);
+      }
+    }
+}
+
+void btnJoystick_Click(btn)
+{
+  if (btn == null)
+    return;
+
+  if (btn == btnLeft)
+    centerX -= 0.1f / zoomX;
+  if (btn == btnRight)
+    centerX += 0.1f / zoomX;
+  if (btn == btnUp)
+    centerY -= 0.1f / zoomY;
+  if (btn == btnDown)
+    centerY += 0.1f / zoomY;
+  if (btn == btnZoomIn)
+  {
+    zoomX *= 1.5f;
+    zoomY *= 1.5f;
+  }
+  if (btn == btnZoomOut)
+  {
+    zoomX /= 1.5f;
+    zoomY /= 1.5f;
+  }
+  if (btn == btnReset)
+  {
+    centerX = centerXreset;
+    centerY = centerYreset;
+    zoomX = zoomXreset;
+    zoomY = zoomYreset;
+  }
+
+  CalculateMandel();
+}
