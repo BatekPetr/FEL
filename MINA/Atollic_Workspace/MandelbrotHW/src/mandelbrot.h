@@ -58,7 +58,7 @@ void CalculateMandel()
   GPIOToggle(RGB_RED);
   uint32_t ms_elapsed = _ticks - start_tick;
   char buf[128];
-  sprintf(buf, "Time: %u", ms_elapsed);
+  sprintf(buf, "Time: %u", (int)ms_elapsed);
   MBED_LCD_WriteStringXY(buf, 0, 0);    // example string output
 
   MBED_LCD_VideoRam2LCD();          // move changes in video buffer to LCD

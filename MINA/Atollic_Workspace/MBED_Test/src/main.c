@@ -60,8 +60,10 @@ int main(void)
   *  E.g.  SCB->VTOR = 0x20000000;  
   */
 
+  SetClock100MHz(clockSourceHSE);
+
   // USART Initialization
-  Usart2Init(0);
+  Usart2Init(38400);
 
   // zrusit bufferovani vystupu i vstupu
   setvbuf(stdout, NULL, _IONBF, 0);
@@ -130,7 +132,7 @@ int main(void)
       Usart2String(buff);
       sscanf(buff, "%" SCNu32 "%" SCNu32 "%" SCNu32, &r, &g, &b); //SCNu32 je format specifier pro uint32_t definovany v <inttypes.h>
       set_RGB_LED_PWM(r,g,b);
-      sprintf(bufLCD, "R:%u G:%u B:%u", r, g, b);
+      sprintf(bufLCD, "R:%u G:%u B:%u", (int)r, (int)g, (int)b);
       MBED_LCD_InitVideoRam(0x00);      // fill content with 0 = clear memory buffer
       MBED_LCD_WriteStringXY(bufLCD, 0, 2);    // example string output
       MBED_LCD_VideoRam2LCD();          // move changes in video buffer to LCD

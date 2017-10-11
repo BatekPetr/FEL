@@ -8,9 +8,9 @@
 #include <nucleo_usart.h>
 
 // USART Functions
-void Usart2Init(int baudSpeed)
+void Usart2Init(uint32_t baudSpeed)
 {
-  //Set TX and RX pins to AF
+    //Set TX and RX pins to AF
     Nucleo_SetPinGPIO(GPIOA, 2, ioPortAlternatePP);
     Nucleo_SetPinGPIO(GPIOA, 3, ioPortAlternatePP);
 
@@ -29,8 +29,39 @@ void Usart2Init(int baudSpeed)
     USART2->CR2 = 0; // nic specialniho
     USART2->CR3 = 0; // nic specialniho
 
-    //TODO doplnit vypocet BRR podle pozadovaneho a podle clocku
-    USART2->BRR = 0x1A1; // rychlost 38400 pri 16MHz - spocitano predem
+
+    // vypocet BRR podle pozadovaneho baudSpeed a podle clocku
+    //int over8 = USART2->CR2 & USART_CR1_OVER8; // Vymyslet to lip, pouzit OVER8 z USART_CR2
+    uint sampling = (USART2->CR1 & USART_CR1_OVER8) ? 8 : 16;
+    uint32_t apb1, mant, tmp, frac;
+    apb1 = GetBusClock(busClockAPB1);
+    mant = apb1 * 16 / (sampling * baudSpeed);    // v 16-tinach
+    tmp = mant / 16;
+
+    frac = mant - (tmp * 16);
+     // zbytek po deleni 16
+    USART2->BRR = (tmp << 4) | (frac & 0x0f);
+
+    /*
+    int over8 = 0;
+    float usart_div = (float)SystemCoreClock / ( baudSpeed * 8 * (2 - over8) );
+    uint32_t brr_int = ((uint32_t) (usart_div/1)); // get integer part from  usart_div;
+    float usart_div_frac = usart_div - brr_int;
+    float minDiff = 1;
+    uint32_t min_idx = 0;
+    for (uint32_t i = 1; i < 16; i++ )
+    {
+      float absDiff = fabs( usart_div_frac - ((float)i/16.0) );
+      if( minDiff >  absDiff)
+      {
+        min_idx = i;
+        minDiff = absDiff;
+      }
+    }
+    uint32_t brr_frac = min_idx;
+    uint32_t brr = ( brr_int << 4 ) | brr_frac;
+    USART2->BRR = brr; // rychlost 38400 pri 16MHz - spocitano predem
+    */
     USART2->CR1 |= USART_CR1_UE; // az na zaver povolen blok USARTu
 }
 
@@ -82,9 +113,24 @@ void Usart2RecvLine(char *buf)
   {
     do
     {
-      *bufPtr = (char)Usart2Recv();
+      *bufPtr = Usart2Recv(); //(char)USART2->DR; // proc nefunguje pouze vycteni registru??
     }
     while( !( (*bufPtr == 0x0A) | (*bufPtr++ == 0x0D)) ); // Waiting for LF Line Feed or CR Carriage Return
+    *(--bufPtr) = '\0';
+  }
+}
+
+// Nefunguje - nacte pouze prvni znak -> RXNE je nastaven po precteni kazdeho bytu??
+void Usart2RecvStr(char *buf)
+{
+  char *bufPtr = buf;
+  if (IsUsart2Recv())
+  {
+    do
+    {
+      *bufPtr = (char)USART2->DR;
+    }
+    while( (USART2->SR & USART_SR_RXNE) != 0); // Read until RxNotEmpty
     *(--bufPtr) = '\0';
   }
 }

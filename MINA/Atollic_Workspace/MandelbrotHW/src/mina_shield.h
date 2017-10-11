@@ -26,6 +26,7 @@
 #define RIGHT_PRESSED 0b00010
 #define PUSH_PRESSED  0b00001
 
+void initJoystick();
 uint8_t readJoystick();
 
 #endif /* MINA_SHIELD_H_ */

@@ -22,18 +22,29 @@ typedef enum {
   ioPortAlternateOC   // alternativni vystup - open drain
 } eIoPortModes;
 
+typedef enum {
+  busClockAHB,
+  busClockAPB1,
+  busClockAPB2,
+  timersClockAPB1,
+  timersClockAPB2
+} eBusClocks;
+
+typedef enum {
+  clockSourceHSI,
+  clockSourceHSE
+} eClockSources;
+
+
 bool Nucleo_SetPinAFGPIO(GPIO_TypeDef *gpio, uint32_t bitnum, uint32_t afValue);
 bool Nucleo_SetPinGPIO(GPIO_TypeDef *gpio, uint32_t bitnum, eIoPortModes mode);
 void GPIOToggle(GPIO_TypeDef *gpio, uint32_t bitnum);
 bool GPIORead(GPIO_TypeDef *gpio, uint32_t bitnum);
 void GPIOWrite(GPIO_TypeDef *gpio, uint32_t bitnum, bool state);
 
-int Usart2Send(char c);
-int Usart2Recv(void);
-bool IsUsart2Recv(void);
-void Usart2String(char *txt);
-void Usart2String(char *txt);
-int Usart2SendStr(char c[]);
+uint32_t GetBusClock(eBusClocks clk);
+bool SetClock100MHz(eClockSources clkSrc);
+bool SetClockHSI(void);
 
 
 #define BOARD_BTN_BLUE GPIOC,13

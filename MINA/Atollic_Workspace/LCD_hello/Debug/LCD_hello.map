@@ -110,7 +110,7 @@ Discarded input sections
                 0x0000000000000000       0xc8 src/syscalls.o
  .debug_ranges  0x0000000000000000       0xb8 src/syscalls.o
  .debug_line    0x0000000000000000      0x3db src/syscalls.o
- .debug_str     0x0000000000000000      0x8f0 src/syscalls.o
+ .debug_str     0x0000000000000000      0x8f6 src/syscalls.o
  .comment       0x0000000000000000       0x7d src/syscalls.o
  .debug_frame   0x0000000000000000      0x354 src/syscalls.o
  .ARM.attributes
@@ -303,25 +303,25 @@ LOAD /opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/ARMTools/bin/../lib/gcc/arm-at
                 0x0000000008000630                __aeabi_dcmpge
                 0x0000000008000644                __aeabi_dcmpgt
  *(.text*)
- .text.main     0x0000000008000658      0x134 src/main.o
+ .text.main     0x0000000008000658      0x138 src/main.o
                 0x0000000008000658                main
  .text.MBED_LCD_GetColumns
-                0x000000000800078c       0x10 src/mbed_shield_lcd.o
-                0x000000000800078c                MBED_LCD_GetColumns
+                0x0000000008000790       0x10 src/mbed_shield_lcd.o
+                0x0000000008000790                MBED_LCD_GetColumns
  .text.MBED_LCD_GetRows
-                0x000000000800079c       0x10 src/mbed_shield_lcd.o
-                0x000000000800079c                MBED_LCD_GetRows
+                0x00000000080007a0       0x10 src/mbed_shield_lcd.o
+                0x00000000080007a0                MBED_LCD_GetRows
  .text.MBED_LCD_send
-                0x00000000080007ac       0x64 src/mbed_shield_lcd.o
+                0x00000000080007b0       0x64 src/mbed_shield_lcd.o
  .text.MBED_LCD_sendData
-                0x0000000008000810       0x68 src/mbed_shield_lcd.o
+                0x0000000008000814       0x68 src/mbed_shield_lcd.o
  .text.MBED_LCD_reset
-                0x0000000008000878       0x78 src/mbed_shield_lcd.o
+                0x000000000800087c       0x78 src/mbed_shield_lcd.o
  .text.MBED_LCD_set_start_line
-                0x00000000080008f0       0x36 src/mbed_shield_lcd.o
+                0x00000000080008f4       0x36 src/mbed_shield_lcd.o
  .text.MBED_LCD_set_page
-                0x0000000008000926       0x2c src/mbed_shield_lcd.o
- *fill*         0x0000000008000952        0x6 
+                0x000000000800092a       0x2c src/mbed_shield_lcd.o
+ *fill*         0x0000000008000956        0x2 
  .text.MBED_LCD_init_hw
                 0x0000000008000958      0x15c src/mbed_shield_lcd.o
  .text.MBED_LCD_InitVideoRam
@@ -598,23 +598,23 @@ LOAD /opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/ARMTools/bin/../lib/gcc/arm-at
                 0x0000000000000245       0x22 /opt/Atollic_TrueSTUDIO_for_ARM_x86_64_8.0.0/ARMTools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtn.o
 OUTPUT(LCD_hello.elf elf32-littlearm)
 
-.debug_info     0x0000000000000000     0x3147
- .debug_info    0x0000000000000000      0x439 src/main.o
- .debug_info    0x0000000000000439      0x9f5 src/mbed_shield_lcd.o
- .debug_info    0x0000000000000e2e      0x4a8 src/nucleo_core.o
- .debug_info    0x00000000000012d6      0xcb8 src/nucleo_usart.o
- .debug_info    0x0000000000001f8e       0x77 src/startup_stm32f411xe.o
- .debug_info    0x0000000000002005      0x4ca src/system_stm32f4xx.o
- .debug_info    0x00000000000024cf      0xc78 src/tiny_printf.o
+.debug_info     0x0000000000000000     0x391f
+ .debug_info    0x0000000000000000      0xc1c src/main.o
+ .debug_info    0x0000000000000c1c      0x9e4 src/mbed_shield_lcd.o
+ .debug_info    0x0000000000001600      0x4a8 src/nucleo_core.o
+ .debug_info    0x0000000000001aa8      0xcb8 src/nucleo_usart.o
+ .debug_info    0x0000000000002760       0x7d src/startup_stm32f411xe.o
+ .debug_info    0x00000000000027dd      0x4ca src/system_stm32f4xx.o
+ .debug_info    0x0000000000002ca7      0xc78 src/tiny_printf.o
 
-.debug_abbrev   0x0000000000000000      0xad0
- .debug_abbrev  0x0000000000000000      0x127 src/main.o
- .debug_abbrev  0x0000000000000127      0x28b src/mbed_shield_lcd.o
- .debug_abbrev  0x00000000000003b2      0x139 src/nucleo_core.o
- .debug_abbrev  0x00000000000004eb      0x252 src/nucleo_usart.o
- .debug_abbrev  0x000000000000073d       0x12 src/startup_stm32f411xe.o
- .debug_abbrev  0x000000000000074f      0x11f src/system_stm32f4xx.o
- .debug_abbrev  0x000000000000086e      0x262 src/tiny_printf.o
+.debug_abbrev   0x0000000000000000      0xb51
+ .debug_abbrev  0x0000000000000000      0x1c0 src/main.o
+ .debug_abbrev  0x00000000000001c0      0x273 src/mbed_shield_lcd.o
+ .debug_abbrev  0x0000000000000433      0x139 src/nucleo_core.o
+ .debug_abbrev  0x000000000000056c      0x252 src/nucleo_usart.o
+ .debug_abbrev  0x00000000000007be       0x12 src/startup_stm32f411xe.o
+ .debug_abbrev  0x00000000000007d0      0x11f src/system_stm32f4xx.o
+ .debug_abbrev  0x00000000000008ef      0x262 src/tiny_printf.o
 
 .debug_aranges  0x0000000000000000      0x218
  .debug_aranges
@@ -641,28 +641,28 @@ OUTPUT(LCD_hello.elf elf32-littlearm)
  .debug_ranges  0x0000000000000148       0x18 src/system_stm32f4xx.o
  .debug_ranges  0x0000000000000160       0x50 src/tiny_printf.o
 
-.debug_line     0x0000000000000000     0x1131
- .debug_line    0x0000000000000000      0x1c6 src/main.o
- .debug_line    0x00000000000001c6      0x598 src/mbed_shield_lcd.o
- .debug_line    0x000000000000075e      0x242 src/nucleo_core.o
- .debug_line    0x00000000000009a0      0x2bf src/nucleo_usart.o
- .debug_line    0x0000000000000c5f       0x7b src/startup_stm32f411xe.o
- .debug_line    0x0000000000000cda      0x1bf src/system_stm32f4xx.o
- .debug_line    0x0000000000000e99      0x298 src/tiny_printf.o
+.debug_line     0x0000000000000000     0x11ad
+ .debug_line    0x0000000000000000      0x242 src/main.o
+ .debug_line    0x0000000000000242      0x598 src/mbed_shield_lcd.o
+ .debug_line    0x00000000000007da      0x242 src/nucleo_core.o
+ .debug_line    0x0000000000000a1c      0x2bf src/nucleo_usart.o
+ .debug_line    0x0000000000000cdb       0x7b src/startup_stm32f411xe.o
+ .debug_line    0x0000000000000d56      0x1bf src/system_stm32f4xx.o
+ .debug_line    0x0000000000000f15      0x298 src/tiny_printf.o
 
-.debug_str      0x0000000000000000      0xbdf
- .debug_str     0x0000000000000000      0x35b src/main.o
-                                        0x3aa (size before relaxing)
- .debug_str     0x000000000000035b      0x259 src/mbed_shield_lcd.o
-                                        0x5ee (size before relaxing)
- .debug_str     0x00000000000005b4       0x7e src/nucleo_core.o
-                                        0x415 (size before relaxing)
- .debug_str     0x0000000000000632      0x455 src/nucleo_usart.o
-                                        0x82d (size before relaxing)
- .debug_str     0x0000000000000a87       0xb8 src/system_stm32f4xx.o
-                                        0x393 (size before relaxing)
- .debug_str     0x0000000000000b3f       0xa0 src/tiny_printf.o
-                                        0x688 (size before relaxing)
+.debug_str      0x0000000000000000      0xbdd
+ .debug_str     0x0000000000000000      0x749 src/main.o
+                                        0x7d0 (size before relaxing)
+ .debug_str     0x0000000000000749      0x245 src/mbed_shield_lcd.o
+                                        0x5e0 (size before relaxing)
+ .debug_str     0x000000000000098e       0x92 src/nucleo_core.o
+                                        0x41b (size before relaxing)
+ .debug_str     0x0000000000000a20       0x65 src/nucleo_usart.o
+                                        0x833 (size before relaxing)
+ .debug_str     0x0000000000000a85       0xb8 src/system_stm32f4xx.o
+                                        0x399 (size before relaxing)
+ .debug_str     0x0000000000000b3d       0xa0 src/tiny_printf.o
+                                        0x68e (size before relaxing)
 
 .comment        0x0000000000000000       0x7c
  .comment       0x0000000000000000       0x7c src/main.o

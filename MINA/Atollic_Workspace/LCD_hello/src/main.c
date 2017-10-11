@@ -29,7 +29,8 @@ SOFTWARE.
 
 /* Includes */
 #include "stm32f4xx.h"
-
+#include <stdio.h>
+#include <string.h>
 /* Private macro */
 /* Private variables */
 /* Private function prototypes */
@@ -92,7 +93,7 @@ int main(void)
     {
       char x = Usart2Recv(); // blokujici funkce
 
-      MBED_LCD_WriteStringXY(x, 0, 1);    // example string output
+      MBED_LCD_WriteStringXY(&x, 0, 1);    // example string output
 
       MBED_LCD_VideoRam2LCD();          // move changes in video buffer to LCD
 

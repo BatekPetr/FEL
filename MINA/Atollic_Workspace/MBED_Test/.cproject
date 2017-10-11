@@ -38,8 +38,9 @@
 								<inputType id="com.atollic.truestudio.as.input.1531176382" name="Input" superClass="com.atollic.truestudio.as.input"/>
 							</tool>
 							<tool id="com.atollic.truestudio.exe.debug.toolchain.gcc.225681464" name="C Compiler" superClass="com.atollic.truestudio.exe.debug.toolchain.gcc">
-								<option id="com.atollic.truestudio.gcc.symbols.defined.394755868" name="Defined symbols" superClass="com.atollic.truestudio.gcc.symbols.defined" valueType="definedSymbols">
+								<option id="com.atollic.truestudio.gcc.symbols.defined.394755868" name="Defined symbols" superClass="com.atollic.truestudio.gcc.symbols.defined" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="STM32F411xE"/>
+									<listOptionValue builtIn="false" value="HSE_VALUE=8000000"/>
 								</option>
 								<option id="com.atollic.truestudio.gcc.directories.select.620887849" name="Include path" superClass="com.atollic.truestudio.gcc.directories.select" valueType="includePath">
 									<listOptionValue builtIn="false" value="../src"/>
@@ -227,6 +228,13 @@
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
-	<storageModule moduleId="refreshScope"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Debug">
+			<resource resourceType="PROJECT" workspacePath="/MBED_Test"/>
+		</configuration>
+		<configuration configurationName="Release">
+			<resource resourceType="PROJECT" workspacePath="/MBED_Test"/>
+		</configuration>
+	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 </cproject>

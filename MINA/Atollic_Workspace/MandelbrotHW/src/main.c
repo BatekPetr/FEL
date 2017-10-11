@@ -64,6 +64,9 @@ int main(void)
   *  SCB->VTOR register.  
   *  E.g.  SCB->VTOR = 0x20000000;  
   */
+
+  //SetClock100MHz(clockSourceHSE);
+
   Nucleo_SetPinGPIO(RGB_RED, ioPortOutputPP);
   GPIOWrite(RGB_RED, 1);
 

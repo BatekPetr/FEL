@@ -2,29 +2,29 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="_read" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="_read"/>
-			<item value="_MBED_LCD_NUCLEO_FN_SET_AF"/>
-			<item value="TIM3"/>
-			<item value="IRQn_Type"/>
-			<item value="AHB1RSTR"/>
-			<item value="RCC_BASE"/>
-			<item value="RCC_TypeDef"/>
-			<item value="AHB1ENR"/>
+			<item value="batekp"/>
+			<item value="HSE"/>
+			<item value="PLLSRC"/>
+			<item value="HSEBYP"/>
+			<item value="PLLCFGR"/>
+			<item value="CFGR"/>
+			<item value="HSEON"/>
+			<item value="HSI"/>
 		</list>
 		<list key="replacehistory">
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="335" key="DIALOG_WIDTH"/>
-		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
-		<item value="459" key="DIALOG_HEIGHT"/>
-		<item value="1335" key="DIALOG_X_ORIGIN"/>
-		<item value="536" key="DIALOG_Y_ORIGIN"/>
+		<item value="358" key="DIALOG_WIDTH"/>
+		<item value="1|Noto Sans|10.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="458" key="DIALOG_HEIGHT"/>
+		<item value="1550" key="DIALOG_X_ORIGIN"/>
+		<item value="427" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>
